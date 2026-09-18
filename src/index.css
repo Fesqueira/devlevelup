@@ -1,8 +1,69 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+@import '@fontsource/funnel-sans/latin-400.css';
+@import '@fontsource/funnel-sans/latin-500.css';
+@import '@fontsource/funnel-sans/latin-600.css';
+@import '@fontsource/funnel-sans/latin-700.css';
+@import '@fontsource/funnel-sans/latin-800.css';
+@import '@fontsource/funnel-display/latin-400.css';
+@import '@fontsource/funnel-display/latin-500.css';
+@import '@fontsource/funnel-display/latin-600.css';
+@import '@fontsource/funnel-display/latin-700.css';
+@import '@fontsource/press-start-2p/latin-400.css';
+@import '@fontsource/inter/latin-400.css';
+@import '@fontsource/inter/latin-600.css';
+@import '@fontsource/inter/latin-700.css';
+@import '@fontsource/inter/latin-800.css';
+@import '@fontsource/inter/latin-900.css';
+@import '@fontsource/roboto-flex/latin-400.css';
 
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
- 
-}
+  --font-sans:
+    'Funnel Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display:
+    'Funnel Display', 'Funnel Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-pixel: 'Press Start 2P', 'Courier New', monospace;
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-roboto-flex: 'Roboto Flex', system-ui, -apple-system, sans-serif;
 
+  --color-arcade-950: #07070d;
+  --color-arcade-900: #10101c;
+  --color-arcade-800: #1a1a2c;
+  --color-arcade-700: #262640;
+
+  --color-arcade-muted: #7d7da1;
+  --color-arcade-ghost: #ececf6;
+
+  --color-arcade-primary: #f43f5e;
+  --color-arcade-secondary: #22d3ee;
+  --color-arcade-accent: #eab308;
+  --color-arcade-neon: #a3e635;
+
+  --color-arcade-cyan: #00f0ff;
+  --color-arcade-purple: #9d00ff;
+  --color-arcade-yellow: #fddf01;
+  --color-arcade-yellow-shadow: #ffb800;
+  --color-arcade-text-secondary: #a3a3c2;
+
+  --color-arcade-surface: #ffffff;
+  --color-arcade-surface-variant: #eaddff;
+  --color-arcade-on-surface: #1c1b1f;
+  --color-arcade-on-surface-variant: #49454f;
+  --color-arcade-outline: #cac4d0;
+  --color-arcade-m3-primary: #6750a4;
+
+  --color-arcade-background: #05050d;
+  --color-arcade-glow: #0d1f5c;
+  --color-arcade-cta-text: #0a0e2a;
+  --color-arcade-divider: #1e3a5f;
+  --color-arcade-level: #0d1a3e;
+  --color-arcade-white: #ffffff;
+  --color-arcade-scene-overlay: rgba(6, 11, 31, 0.15);
+
+  --shadow-arcade-glow: 0 0 8px rgba(0, 240, 255, 0.25);
+  --shadow-arcade-cta: 0 4px 16px rgba(253, 223, 1, 0.4);
+  --shadow-arcade-badge: 0 0 12px rgba(0, 240, 255, 0.4);
+  --shadow-arcade-level: 0 0 10px rgba(253, 223, 1, 0.4);
+
+  --text-shadow-arcade-title: 0 0 20px rgba(0, 240, 255, 0.5);
+}

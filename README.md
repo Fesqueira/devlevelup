@@ -19,6 +19,8 @@ npm run dev
 ```bash
 npm run dev      # dev server
 npm run build    # typecheck + build
-npm run lint     # oxlint
+npm run lint     # eslint
+npm run format   # prettier --write
+npm run format:check  # prettier --check
 npm run preview  # serve build
 ```
