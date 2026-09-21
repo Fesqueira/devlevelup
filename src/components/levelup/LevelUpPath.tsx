@@ -20,6 +20,15 @@ export function LevelUpPath({ className }: LevelUpPathProps) {
         {levelUpCopy.levels.map((level, index) => (
           <Fragment key={level.level}>
             <li className="flex w-full max-w-56 flex-col items-center gap-4 text-center lg:w-auto lg:flex-1">
+              <img
+                src={level.image}
+                alt={level.name}
+                loading="lazy"
+                className={cn(
+                  'size-24 object-contain',
+                  level.locked && 'opacity-40 saturate-50',
+                )}
+              />
               <LevelNode level={level} />
               <div className="flex flex-col gap-1">
                 <p className="font-inter text-base font-bold text-arcade-white">
