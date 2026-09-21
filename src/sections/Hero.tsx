@@ -25,11 +25,10 @@ export function Hero({ className }: HeroProps) {
         <HeroEyebrow />
         <HeroTitle />
         <HeroDescription />
+        <HeroScene />
         <HeroActions />
         <HeroStats />
       </div>
-
-      <HeroScene />
 
       <div
         aria-hidden="true"
