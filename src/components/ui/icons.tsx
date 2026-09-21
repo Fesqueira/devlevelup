@@ -254,3 +254,65 @@ export function CodeIcon({ className }: IconProps) {
     </svg>
   )
 }
+
+export function XCircleIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 12 12"
+      fill="none"
+      className={className}
+      aria-hidden="true"
+    >
+      <circle cx="6" cy="6" r="5" stroke="currentColor" strokeWidth="1.5" />
+      <path
+        d="m4 4 4 4M8 4l-4 4"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  )
+}
+
+export function BoltIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 12 12"
+      fill="none"
+      className={className}
+      aria-hidden="true"
+    >
+      <path
+        d="M6.75 1 2.5 6.75h2.25L5.25 11l4.25-5.75H7.25L6.75 1Z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
+export function LockIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 14 14"
+      fill="none"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect
+        x="2.5"
+        y="6"
+        width="9"
+        height="6.5"
+        rx="1.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M4.5 6V4.5a2.5 2.5 0 0 1 5 0V6"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  )
+}

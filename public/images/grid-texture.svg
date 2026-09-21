@@ -1,0 +1,15 @@
+<svg width="1440" height="916" viewBox="0 0 1440 916" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line y1="99.5" x2="1440" y2="99.5" stroke="white" stroke-opacity="0.0196078"/>
+<line y1="299.5" x2="1440" y2="299.5" stroke="white" stroke-opacity="0.0196078"/>
+<line y1="499.5" x2="1440" y2="499.5" stroke="white" stroke-opacity="0.0196078"/>
+<line y1="699.5" x2="1440" y2="699.5" stroke="white" stroke-opacity="0.0196078"/>
+<line x1="180.5" x2="180.5" y2="900" stroke="white" stroke-opacity="0.0196078"/>
+<line x1="450.5" x2="450.5" y2="900" stroke="white" stroke-opacity="0.0196078"/>
+<line x1="720.5" x2="720.5" y2="900" stroke="white" stroke-opacity="0.0196078"/>
+<line x1="990.5" x2="990.5" y2="900" stroke="white" stroke-opacity="0.0196078"/>
+<line x1="1260.5" x2="1260.5" y2="900" stroke="white" stroke-opacity="0.0196078"/>
+<circle opacity="0.1" cx="180" cy="100" r="6" fill="#00F0FF"/>
+<circle opacity="0.1" cx="720" cy="300" r="6" fill="#8B5CF6"/>
+<circle opacity="0.1" cx="1260" cy="500" r="6" fill="#00F0FF"/>
+<circle opacity="0.1" cx="450" cy="700" r="6" fill="#8B5CF6"/>
+</svg>
