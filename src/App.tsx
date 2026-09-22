@@ -6,6 +6,7 @@ import { Hero } from './sections/Hero'
 import { Impact } from './sections/Impact'
 import { LevelUp } from './sections/LevelUp'
 import { Squad } from './sections/Squad'
+import { Voices } from './sections/Voices'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <CTA />
       <Squad />
       <Impact />
+      <Voices />
       <Footer />
     </div>
   )

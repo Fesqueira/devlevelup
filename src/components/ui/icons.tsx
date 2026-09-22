@@ -219,6 +219,24 @@ export function GitHubIcon({ className }: IconProps) {
   )
 }
 
+export function ArrowLeftIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 14 14"
+      fill="none"
+      className={className}
+      aria-hidden="true"
+    >
+      <path
+        d="M11.0837 6.99982H2.91602M6.99986 11.0836L2.91602 6.99982L6.99986 2.91602"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  )
+}
+
 export function ArrowRightIcon({ className }: IconProps) {
   return (
     <svg
