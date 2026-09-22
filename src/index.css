@@ -59,35 +59,11 @@
   --color-arcade-level: #0d1a3e;
   --color-arcade-white: #ffffff;
   --color-arcade-scene-overlay: rgba(6, 11, 31, 0.15);
-  --color-arcade-footer: #090d16;
-  --color-arcade-footer-heading: #f8fafc;
-  --color-arcade-footer-text: #cbd5e1;
-  --color-arcade-footer-divider: rgba(255, 255, 255, 0.08);
-
-  --color-arcade-navbar: rgba(9, 13, 22, 0.8);
-  --color-arcade-nav-muted: #94a3b8;
-  --color-arcade-nav-border: rgba(255, 255, 255, 0.08);
-
-  --color-arcade-comparison-card: rgba(15, 23, 42, 0.4);
-  --color-arcade-comparison-card-active: rgba(15, 23, 42, 0.6);
-  --color-arcade-level-frame: rgba(7, 10, 21, 0.6);
-  --color-arcade-comparison-bullet: #e2e8f0;
-  --color-arcade-purple-glow: #8b5cf6;
-  --color-arcade-card-border: rgba(255, 255, 255, 0.04);
-  --color-arcade-icon-border: rgba(255, 255, 255, 0.15);
-  --color-arcade-cyan-badge: rgba(0, 240, 255, 0.1);
-  --color-arcade-cyan-badge-border: rgba(0, 240, 255, 0.18);
-  --color-arcade-cyan-icon: rgba(0, 240, 255, 0.08);
-  --color-arcade-cyan-icon-border: rgba(0, 240, 255, 0.15);
 
   --shadow-arcade-glow: 0 0 8px rgba(0, 240, 255, 0.25);
   --shadow-arcade-cta: 0 4px 16px rgba(253, 223, 1, 0.4);
   --shadow-arcade-badge: 0 0 12px rgba(0, 240, 255, 0.4);
   --shadow-arcade-level: 0 0 10px rgba(253, 223, 1, 0.4);
-  --shadow-arcade-cta-cyan: 0 4px 16px rgba(0, 240, 255, 0.25);
-  --shadow-arcade-card-glow: 0 0 24px rgba(0, 240, 255, 0.15);
-  --shadow-arcade-cta-cyan-lg: 0 8px 20px rgba(0, 240, 255, 0.3);
 
   --text-shadow-arcade-title: 0 0 20px rgba(0, 240, 255, 0.5);
-  --text-shadow-arcade-nav: 0 0 8px rgba(0, 240, 255, 0.4);
 }

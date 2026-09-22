@@ -19,8 +19,7 @@ src/
 ├── config.ts        # metadata do projeto (siteConfig)
 ├── sections/        # seções da LP (Hero, CTA, Footer)
 ├── components/
-│   ├── ui/          # primitivos reutilizáveis (Button, Card)
-│   └── footer/      # subcomponentes do Footer (FooterBrand, FooterSocial)
+│   └── ui/          # primitivos reutilizáveis (Button, Card)
 ├── hooks/           # hooks customizados (useXxx.ts)
 ├── lib/             # utils (cn(), etc.)
 └── data/            # dados estáticos das seções
@@ -30,16 +29,14 @@ src/
 
 - `main.tsx` → importa `App.tsx` (e `index.css`).
 - `App.tsx` → compõe as seções de `sections/` na ordem da página.
-- `sections/` → usam `components/ui/*`, `components/<feature>/*` e dados de `data/`.
+- `sections/` → usam `components/ui/*` e dados de `data/`.
 - `components/ui/*` → primitivos genéricos; usam `cn()` de `lib/utils.ts` para mesclar classes.
-- `components/<feature>/*` → subcomponentes específicos de uma seção (ex.: `components/footer/`); usam `cn()` e tokens do `@theme`.
 - Cores/fontes vêm **só** dos tokens de `index.css` (`@theme`), nunca hardcoded.
 
 ## Convenções
 
 - **Componentes** em `PascalCase.tsx`; **hooks** em `useXxx.ts`; **libs** em `kebab-case.ts`.
 - `sections/` exportam somente componentes (regra `react-refresh/only-export-components`); constantes/variants ficam fora do arquivo ou em `data/`.
-- Subcomponentes específicos de uma seção ficam em `components/<feature>/` (ex.: `components/footer/`); `components/ui/` é só para primitivos reutilizáveis.
 - Classes com conflito → `cn()` (`clsx` + `tailwind-merge`).
 - Estilo: Prettier sem `;`, aspas simples, trailing comma.
 

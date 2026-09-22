@@ -8,10 +8,7 @@ Como criar e estruturar componentes no DevLevelUp.
 | --------------------------- | -------------------- | ------------------------------ |
 | Seção de layout da LP       | `src/sections/`      | `src/sections/Hero.tsx`        |
 | Primítivo reutilizável / UI | `src/components/ui/` | `src/components/ui/Button.tsx` |
-| Subcomponente de seção      | `src/components/<feature>/` | `src/components/footer/FooterBrand.tsx` |
 | Dados estáticos             | `src/data/`          | `src/data/nav.ts`              |
-
-**`components/ui/` vs `components/<feature>/`**: `ui/` guarda primitivos genéricos reutilizáveis em qualquer lugar (Button, Card, ícones). `components/<feature>/` guarda subcomponentes específicos de uma seção (ex.: `footer/` com `FooterBrand`, `FooterSocial`), que não fazem sentido fora dela. Se um subcomponente passar a ser usado em mais de uma seção, promova para `components/ui/`.
 
 ## Nomenclatura
 

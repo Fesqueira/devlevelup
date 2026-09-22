@@ -2,10 +2,6 @@
 
 <!-- Descreva o objetivo da mudança em 1-2 frases. -->
 
-## Branch base
-
-<!-- feature/*, fix/* e chore/* → develop. release/* e hotfix/* → main. -->
-
 ## Mudanças
 
 <!-- Lista de mudanças principais (se necessário, com arquivos/áreas). -->
@@ -22,7 +18,6 @@
 - [ ] `npm run build` verde
 - [ ] CI verde
 - [ ] `package-lock.json` commitado (se houver mudança de dependência)
-- [ ] Tag semver criada (somente PRs de `release/*`/`hotfix/*` para `main`)
 
 ## Reviewer
 

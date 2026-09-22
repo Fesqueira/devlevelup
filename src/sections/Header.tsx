@@ -1,10 +1,5 @@
 import { useState } from 'react'
-import {
-  CloseIcon,
-  MenuIcon,
-  SouJuniorMark,
-  SouJuniorWordmark,
-} from '../components/ui/icons'
+import { CloseIcon, MenuIcon } from '../components/ui/icons'
 import { siteConfig } from '../config'
 import { navLinks } from '../data/nav'
 import { cn } from '../lib/utils'
@@ -19,36 +14,26 @@ export function Header({ className }: HeaderProps) {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 border-b border-arcade-nav-border bg-arcade-navbar backdrop-blur',
+        'sticky top-0 z-50 border-b border-arcade-outline bg-arcade-surface',
         className,
       )}
     >
-      <div className="flex h-18 items-center justify-between gap-6 px-6 sm:px-10 lg:px-20">
-        <a
-          href="#"
-          className="flex items-center gap-3"
-          aria-label="SouJunior — início"
-        >
-          <span className="flex items-center gap-3">
-            <SouJuniorMark className="size-9 text-arcade-white" />
-            <SouJuniorWordmark className="h-[17px] w-auto text-arcade-white" />
+      <div className="flex h-16 items-center justify-between gap-6 px-4 sm:h-17 sm:px-8 lg:px-16">
+        <a href="#" className="flex items-center gap-2 sm:gap-3">
+          <span className="flex h-8 w-8 items-center justify-center rounded-md border-[1.5px] border-arcade-m3-primary bg-arcade-surface-variant font-sans text-base font-extrabold leading-none text-arcade-m3-primary sm:h-9 sm:w-9 sm:rounded-lg sm:border-2 sm:text-xl">
+            {'SJ'}
+          </span>
+          <span className="font-sans text-base font-bold text-arcade-on-surface sm:text-xl">
+            {'SouJunior'}
           </span>
         </a>
 
-        <nav
-          className="hidden items-center gap-8 md:flex"
-          aria-label="Navegação principal"
-        >
-          {navLinks.map((link, index) => (
+        <nav className="hidden items-center gap-8 md:flex">
+          {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={cn(
-                'font-sans text-sm font-medium transition-colors',
-                index === 0
-                  ? 'text-arcade-cyan text-shadow-arcade-nav'
-                  : 'text-arcade-nav-muted hover:text-arcade-cyan',
-              )}
+              className="font-sans text-sm font-medium text-arcade-on-surface-variant transition-colors hover:text-arcade-m3-primary"
             >
               {link.label}
             </a>
@@ -56,27 +41,18 @@ export function Header({ className }: HeaderProps) {
         </nav>
 
         <div className="flex items-center gap-3">
-          <img
-            src="/images/mascote-soujunior.png"
-            alt="Mascote SouJunior"
-            loading="eager"
-            className="hidden size-15 rounded-lg object-contain sm:block"
-          />
           <a
             href={siteConfig.links.apoia}
-            className="inline-flex h-10 items-center rounded-lg bg-arcade-cyan px-3 font-sans text-sm font-semibold text-arcade-950 shadow-arcade-badge transition-colors hover:bg-arcade-secondary sm:h-auto sm:px-5 sm:py-2.5"
+            className="inline-flex h-10 items-center rounded-full bg-arcade-m3-primary px-4 font-sans text-xs font-semibold text-arcade-surface transition-colors hover:bg-arcade-m3-primary/90 sm:h-auto sm:px-6 sm:py-3 sm:text-sm"
           >
-            <span className="sm:hidden">{'Apoiar'}</span>
-            <span className="hidden sm:inline">
-              {'Apoiar a partir de R$ 2,00'}
-            </span>
+            {'Apoiar'}
           </a>
           <button
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
             aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={menuOpen}
-            className="flex h-10 w-10 items-center justify-center rounded-lg text-arcade-ghost transition-colors hover:text-arcade-cyan md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-arcade-on-surface transition-colors hover:bg-arcade-surface-variant md:hidden"
           >
             {menuOpen ? (
               <CloseIcon className="h-6 w-6" />
@@ -88,22 +64,14 @@ export function Header({ className }: HeaderProps) {
       </div>
 
       {menuOpen && (
-        <nav
-          className="border-t border-arcade-nav-border bg-arcade-navbar px-6 py-4 backdrop-blur md:hidden"
-          aria-label="Menu móvel"
-        >
+        <nav className="border-t border-arcade-outline bg-arcade-surface px-4 py-4 md:hidden">
           <ul className="flex flex-col gap-4">
-            {navLinks.map((link, index) => (
+            {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className={cn(
-                    'font-sans text-sm font-medium transition-colors',
-                    index === 0
-                      ? 'text-arcade-cyan text-shadow-arcade-nav'
-                      : 'text-arcade-nav-muted hover:text-arcade-cyan',
-                  )}
+                  className="font-sans text-sm font-medium text-arcade-on-surface-variant transition-colors hover:text-arcade-m3-primary"
                 >
                   {link.label}
                 </a>

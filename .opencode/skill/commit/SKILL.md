@@ -29,7 +29,7 @@ Regras de commit do DevLevelUp (ver `AGENTS.md` e `docs/git-branches.md`).
 ## Regras obrigatórias
 
 - **Nunca** criar commit automaticamente sem autorização explícita do usuário.
-- **Nunca** commitar direto em `main` ou `develop` (trabalhar em `feature/*`, `fix/*`, `chore/*`, `release/*` ou `hotfix/*`).
+- **Nunca** commitar direto em `main`.
 - Antes de commitar, sugerir rodar as checagens: `npm run lint`, `npm run format:check`, `npm run build` (o pre-commit também bloqueia se falhar).
 - Idioma: código em inglês, mensagem de commit em português.
 
