@@ -2,6 +2,7 @@ import { siteConfig } from '../../config'
 import { ctaCopy } from '../../data/cta'
 import { cn } from '../../lib/utils'
 import { BoltIcon } from '../ui/icons'
+import { MascotIdle } from './MascotIdle'
 
 interface CtaBannerProps {
   className?: string
@@ -22,11 +23,7 @@ export function CtaBanner({ className }: CtaBannerProps) {
       </h2>
 
       <div className="flex flex-none items-center justify-center gap-4 sm:gap-6">
-        <img
-          src="/images/mascote-apontando.png"
-          alt={ctaCopy.mascotAlt}
-          className="size-16 shrink-0 object-contain sm:size-20"
-        />
+        <MascotIdle alt={ctaCopy.mascotAlt} className="size-16 sm:size-20" />
         <a
           href={siteConfig.links.apoia}
           className="inline-flex items-center gap-2 rounded-lg bg-arcade-cyan px-6 py-3.5 font-inter text-base font-bold leading-6 text-arcade-950 shadow-arcade-cta-cyan-lg transition-colors hover:bg-arcade-secondary sm:px-8"
