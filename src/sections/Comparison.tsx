@@ -1,5 +1,6 @@
 import { ComparisonCard } from '../components/comparison/ComparisonCard'
 import { ComparisonCta } from '../components/comparison/ComparisonCta'
+import { Glow } from '../components/ui/Glow'
 import { SectionHeader } from '../components/ui/SectionHeader'
 import { comparisonCopy } from '../data/comparison'
 import { cn } from '../lib/utils'
@@ -16,14 +17,8 @@ export function Comparison({ className }: ComparisonProps) {
         className,
       )}
     >
-      <div
-        aria-hidden="true"
-        className="absolute -left-40 top-40 size-125 rounded-full bg-arcade-cyan opacity-10 blur-[75px]"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -right-40 top-64 size-125 rounded-full bg-arcade-purple-glow opacity-10 blur-[75px]"
-      />
+      <Glow className="-left-40 top-40 size-125" />
+      <Glow tone="purple" className="-right-40 top-64 size-125" />
       <img
         src="/images/grid-texture.svg"
         alt=""

@@ -1,4 +1,5 @@
 import { SquadCard } from '../components/squad/SquadCard'
+import { Glow } from '../components/ui/Glow'
 import { SectionHeader } from '../components/ui/SectionHeader'
 import { Starfield } from '../components/ui/Starfield'
 import { squadCopy } from '../data/squad'
@@ -21,32 +22,23 @@ export function Squad({ className }: SquadProps) {
         aria-hidden="true"
         className="absolute inset-x-0 top-0 h-132 bg-[radial-gradient(50%_50%_at_50%_20%,var(--color-arcade-900)_0%,var(--color-arcade-footer)_70%,var(--color-arcade-footer)_100%)]"
       />
-      <div
-        aria-hidden="true"
-        className="absolute -left-25 top-7.5 size-125 rounded-full bg-arcade-cyan opacity-[0.13] blur-[75px]"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -right-28 top-7.5 size-125 rounded-full bg-arcade-purple-glow opacity-[0.13] blur-[75px]"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -left-30 top-50 size-105 rounded-full bg-arcade-cyan opacity-[0.11] blur-[75px]"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -right-25 top-50 size-110 rounded-full bg-arcade-purple-glow opacity-[0.11] blur-[75px]"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute left-1/2 top-20 h-75 w-150 -translate-x-1/2 rounded-full bg-arcade-cyan opacity-[0.04] blur-[60px]"
+      <Glow opacity={13} className="-left-25 top-7.5 size-125" />
+      <Glow tone="purple" opacity={13} className="-right-28 top-7.5 size-125" />
+      <Glow opacity={11} className="-left-30 top-50 size-105" />
+      <Glow tone="purple" opacity={11} className="-right-25 top-50 size-110" />
+      <Glow
+        opacity={4}
+        blur={60}
+        className="left-1/2 top-20 h-75 w-150 -translate-x-1/2"
       />
 
       <Starfield />
 
-      <div
-        aria-hidden="true"
-        className="absolute left-1/2 top-1/2 h-87.5 w-250 -translate-x-1/2 -translate-y-1/2 rounded-full bg-arcade-level opacity-[0.6] blur-[30px]"
+      <Glow
+        tone="level"
+        opacity={60}
+        blur={30}
+        className="left-1/2 top-1/2 h-87.5 w-250 -translate-x-1/2 -translate-y-1/2"
       />
 
       <SectionHeader

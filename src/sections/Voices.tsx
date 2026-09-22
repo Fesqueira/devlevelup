@@ -1,4 +1,5 @@
 import { VoicesCarousel } from '../components/voices/VoicesCarousel'
+import { Glow } from '../components/ui/Glow'
 import { SectionHeader } from '../components/ui/SectionHeader'
 import { vozesCopy } from '../data/vozes'
 import { cn } from '../lib/utils'
@@ -16,21 +17,19 @@ export function Voices({ className }: VoicesProps) {
         className,
       )}
     >
-      <div
-        aria-hidden="true"
-        className="absolute -left-30 top-20 size-90 rounded-full bg-arcade-purple-glow opacity-15 blur-[60px]"
+      <Glow
+        tone="purple"
+        opacity={15}
+        blur={60}
+        className="-left-30 top-20 size-90"
       />
-      <div
-        aria-hidden="true"
-        className="absolute -right-30 top-20 size-90 rounded-full bg-arcade-cyan opacity-12 blur-[60px]"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -left-30 bottom-10 size-90 rounded-full bg-arcade-cyan opacity-12 blur-[60px]"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -right-30 bottom-10 size-90 rounded-full bg-arcade-purple-glow opacity-15 blur-[60px]"
+      <Glow opacity={12} blur={60} className="-right-30 top-20 size-90" />
+      <Glow opacity={12} blur={60} className="-left-30 bottom-10 size-90" />
+      <Glow
+        tone="purple"
+        opacity={15}
+        blur={60}
+        className="-right-30 bottom-10 size-90"
       />
 
       <SectionHeader

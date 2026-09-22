@@ -1,4 +1,5 @@
 import { LevelUpPath } from '../components/levelup/LevelUpPath'
+import { Glow } from '../components/ui/Glow'
 import { SectionHeader } from '../components/ui/SectionHeader'
 import { levelUpCopy } from '../data/levelup'
 import { cn } from '../lib/utils'
@@ -16,14 +17,8 @@ export function LevelUp({ className }: LevelUpProps) {
         className,
       )}
     >
-      <div
-        aria-hidden="true"
-        className="absolute -left-40 top-40 size-125 rounded-full bg-arcade-cyan opacity-10 blur-[75px]"
-      />
-      <div
-        aria-hidden="true"
-        className="absolute -right-40 top-64 size-125 rounded-full bg-arcade-cyan opacity-10 blur-[75px]"
-      />
+      <Glow className="-left-40 top-40 size-125" />
+      <Glow className="-right-40 top-64 size-125" />
       <img
         src="/images/grid-texture.svg"
         alt=""
