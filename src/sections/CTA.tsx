@@ -10,7 +10,7 @@ export function CTA({ className }: CTAProps) {
     <section
       className={cn('bg-arcade-footer px-6 py-16 lg:px-20 lg:py-24', className)}
     >
-      <div className="w-full">
+      <div className="mx-auto w-full max-w-328">
         <CtaBanner />
       </div>
     </section>
