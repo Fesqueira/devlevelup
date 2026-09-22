@@ -5,6 +5,7 @@ import { Header } from './sections/Header'
 import { Hero } from './sections/Hero'
 import { Impact } from './sections/Impact'
 import { LevelUp } from './sections/LevelUp'
+import { Squad } from './sections/Squad'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Comparison />
       <LevelUp />
       <CTA />
+      <Squad />
       <Impact />
       <Footer />
     </div>
