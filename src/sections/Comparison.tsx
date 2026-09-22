@@ -1,6 +1,6 @@
 import { ComparisonCard } from '../components/comparison/ComparisonCard'
 import { ComparisonCta } from '../components/comparison/ComparisonCta'
-import { ComparisonHeader } from '../components/comparison/ComparisonHeader'
+import { SectionHeader } from '../components/ui/SectionHeader'
 import { comparisonCopy } from '../data/comparison'
 import { cn } from '../lib/utils'
 
@@ -31,7 +31,11 @@ export function Comparison({ className }: ComparisonProps) {
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
       />
 
-      <ComparisonHeader />
+      <SectionHeader
+        badge={comparisonCopy.badge}
+        title={comparisonCopy.title}
+        description={comparisonCopy.description}
+      />
 
       <div className="relative flex w-full flex-col items-center gap-8 lg:flex-row lg:justify-center">
         <ComparisonCard

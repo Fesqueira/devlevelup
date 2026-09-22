@@ -1,5 +1,6 @@
-import { LevelUpHeader } from '../components/levelup/LevelUpHeader'
 import { LevelUpPath } from '../components/levelup/LevelUpPath'
+import { SectionHeader } from '../components/ui/SectionHeader'
+import { levelUpCopy } from '../data/levelup'
 import { cn } from '../lib/utils'
 
 interface LevelUpProps {
@@ -30,7 +31,12 @@ export function LevelUp({ className }: LevelUpProps) {
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"
       />
 
-      <LevelUpHeader />
+      <SectionHeader
+        badge={levelUpCopy.badge}
+        subtitle={levelUpCopy.subtitle}
+        title={levelUpCopy.title}
+        description={levelUpCopy.description}
+      />
 
       <LevelUpPath className="relative w-full" />
 
