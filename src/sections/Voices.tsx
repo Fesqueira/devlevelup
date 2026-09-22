@@ -1,5 +1,5 @@
 import { VoicesCarousel } from '../components/voices/VoicesCarousel'
-import { Glow } from '../components/ui/Glow'
+import { VoicesGlows } from '../components/voices/VoicesGlows'
 import { SectionHeader } from '../components/ui/SectionHeader'
 import { vozesCopy } from '../data/vozes'
 import { cn } from '../lib/utils'
@@ -17,20 +17,7 @@ export function Voices({ className }: VoicesProps) {
         className,
       )}
     >
-      <Glow
-        tone="purple"
-        opacity={15}
-        blur={60}
-        className="-left-30 top-20 size-90"
-      />
-      <Glow opacity={12} blur={60} className="-right-30 top-20 size-90" />
-      <Glow opacity={12} blur={60} className="-left-30 bottom-10 size-90" />
-      <Glow
-        tone="purple"
-        opacity={15}
-        blur={60}
-        className="-right-30 bottom-10 size-90"
-      />
+      <VoicesGlows />
 
       <SectionHeader
         badge={vozesCopy.badge}
