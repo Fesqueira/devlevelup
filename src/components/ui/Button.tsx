@@ -26,7 +26,7 @@ export function Button({
       <a
         href={href}
         className={classes}
-        {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
+        {...(props as unknown as AnchorHTMLAttributes<HTMLAnchorElement>)}
       />
     )
   }
