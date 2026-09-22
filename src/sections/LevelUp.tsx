@@ -18,11 +18,11 @@ export function LevelUp({ className }: LevelUpProps) {
     >
       <div
         aria-hidden="true"
-        className="absolute -left-40 top-40 size-[500px] rounded-full bg-arcade-cyan opacity-10 blur-[75px]"
+        className="absolute -left-40 top-40 size-125 rounded-full bg-arcade-cyan opacity-10 blur-[75px]"
       />
       <div
         aria-hidden="true"
-        className="absolute -right-40 top-64 size-[500px] rounded-full bg-arcade-cyan opacity-10 blur-[75px]"
+        className="absolute -right-40 top-64 size-125 rounded-full bg-arcade-cyan opacity-10 blur-[75px]"
       />
       <img
         src="/images/grid-texture.svg"

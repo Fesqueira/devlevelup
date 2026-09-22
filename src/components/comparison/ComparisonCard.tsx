@@ -52,7 +52,7 @@ export function ComparisonCard({
         >
           {eyebrow}
         </p>
-        <h3 className="font-inter text-xl font-semibold leading-[26px] text-arcade-footer-heading">
+        <h3 className="font-inter text-xl font-semibold leading-6.5 text-arcade-footer-heading">
           {title}
         </h3>
       </div>

@@ -21,7 +21,7 @@ export function Impact({ className }: ImpactProps) {
         subtitle={impactCopy.subtitle}
       />
 
-      <div className="relative flex w-full max-w-[1080px] flex-col items-center gap-6 lg:flex-row lg:justify-center">
+      <div className="relative flex w-full max-w-270 flex-col items-center gap-6 lg:flex-row lg:justify-center">
         {impactCopy.stats.map((stat) => (
           <ImpactCard
             key={stat.title}

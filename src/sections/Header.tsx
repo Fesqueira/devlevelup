@@ -31,7 +31,7 @@ export function Header({ className }: HeaderProps) {
         >
           <span className="flex items-center gap-3">
             <SouJuniorMark className="size-9 text-arcade-white" />
-            <SouJuniorWordmark className="h-[17px] w-auto text-arcade-white" />
+            <SouJuniorWordmark className="h-4.25 w-auto text-arcade-white" />
           </span>
         </a>
 

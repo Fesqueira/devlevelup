@@ -68,13 +68,13 @@ export function LevelUpPath({ className }: LevelUpPathProps) {
             {index < levelUpCopy.levels.length - 1 && (
               <li className="flex items-center justify-center lg:w-24 lg:self-center">
                 <div className="flex w-full items-center gap-2">
-                  <span className="hidden h-px flex-1 bg-gradient-to-r from-arcade-cyan to-arcade-yellow lg:block" />
+                  <span className="hidden h-px flex-1 bg-linear-to-r from-arcade-cyan to-arcade-yellow lg:block" />
                   <span className="flex items-center gap-1 rounded-full bg-arcade-cyan-badge px-2 py-1 font-inter text-[10px] font-bold text-arcade-cyan">
                     <BoltIcon className="size-3" />
                     {levelUpCopy.xpLabel}
                     <ArrowRightIcon className="size-3" />
                   </span>
-                  <span className="hidden h-px flex-1 bg-gradient-to-r from-arcade-yellow to-arcade-cyan lg:block" />
+                  <span className="hidden h-px flex-1 bg-linear-to-r from-arcade-yellow to-arcade-cyan lg:block" />
                 </div>
               </li>
             )}
