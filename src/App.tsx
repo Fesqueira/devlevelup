@@ -5,6 +5,7 @@ import { Header } from './sections/Header'
 import { Hero } from './sections/Hero'
 import { Impact } from './sections/Impact'
 import { LevelUp } from './sections/LevelUp'
+import { PowerUp } from './sections/PowerUp'
 import { Squad } from './sections/Squad'
 import { Voices } from './sections/Voices'
 
@@ -19,6 +20,7 @@ export default function App() {
       <Squad />
       <Impact />
       <Voices />
+      <PowerUp />
       <Footer />
     </div>
   )

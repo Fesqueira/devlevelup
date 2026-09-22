@@ -80,6 +80,11 @@
   --color-arcade-cyan-badge-border: rgba(0, 240, 255, 0.18);
   --color-arcade-cyan-icon: rgba(0, 240, 255, 0.08);
   --color-arcade-cyan-icon-border: rgba(0, 240, 255, 0.15);
+  --color-arcade-powerup-card: rgba(255, 255, 255, 0.03);
+  --color-arcade-powerup-track: #1e293b;
+  --color-arcade-purple-badge: rgba(139, 92, 246, 0.15);
+  --color-arcade-mascot-glow: rgba(0, 240, 255, 0.5);
+  --color-arcade-mascot-glow-mid: rgba(0, 240, 255, 0.2);
 
   --shadow-arcade-glow: 0 0 8px rgba(0, 240, 255, 0.25);
   --shadow-arcade-cta: 0 4px 16px rgba(253, 223, 1, 0.4);
@@ -88,8 +93,13 @@
   --shadow-arcade-cta-cyan: 0 4px 16px rgba(0, 240, 255, 0.25);
   --shadow-arcade-card-glow: 0 0 24px rgba(0, 240, 255, 0.15);
   --shadow-arcade-cta-cyan-lg: 0 8px 20px rgba(0, 240, 255, 0.3);
+  --shadow-arcade-powerup-card: 0 12px 32px -12px rgba(0, 0, 0, 0.25);
+  --shadow-arcade-tier-featured:
+    0 0 24px rgba(139, 92, 246, 0.4), 0 12px 32px -12px rgba(0, 0, 0, 0.25);
+  --shadow-arcade-progress-fill: 0 0 14px rgba(0, 240, 255, 0.33);
 
   --text-shadow-arcade-title: 0 0 20px rgba(0, 240, 255, 0.5);
   --text-shadow-arcade-nav: 0 0 8px rgba(0, 240, 255, 0.4);
   --text-shadow-arcade-impact: 0 0 12px rgba(0, 240, 255, 0.4);
+  --text-shadow-arcade-powerup: 0 0 18px rgba(0, 240, 255, 0.4);
 }
