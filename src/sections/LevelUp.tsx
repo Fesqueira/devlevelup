@@ -11,7 +11,7 @@ export function LevelUp({ className }: LevelUpProps) {
     <section
       id="jornada"
       className={cn(
-        'relative flex flex-col items-center gap-14 overflow-hidden bg-arcade-background px-6 py-16 lg:px-20 lg:py-24',
+        'relative flex flex-col items-center gap-14 overflow-hidden bg-arcade-footer px-6 py-16 lg:px-20 lg:py-24',
         className,
       )}
     >

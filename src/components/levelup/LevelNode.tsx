@@ -10,7 +10,7 @@ export function LevelNode({ level, className }: LevelNodeProps) {
   return (
     <div
       className={cn(
-        'flex size-16 shrink-0 items-center justify-center rounded-lg border font-inter text-xs font-bold',
+        'flex h-7 w-14 shrink-0 items-center justify-center rounded-lg border font-inter text-xs font-bold',
         level.current
           ? 'border-arcade-cyan bg-arcade-cyan-icon text-arcade-cyan shadow-arcade-card-glow'
           : level.locked

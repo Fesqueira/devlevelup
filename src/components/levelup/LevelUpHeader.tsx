@@ -12,7 +12,7 @@ export function LevelUpHeader({ className }: LevelUpHeaderProps) {
         {levelUpCopy.badge}
       </span>
       <div className="flex flex-col items-center gap-1">
-        <p className="font-inter text-sm font-medium text-arcade-text-secondary">
+        <p className="font-inter text-2xl font-bold leading-10 text-arcade-white sm:text-3xl lg:text-[32px]">
           {levelUpCopy.subtitle}
         </p>
         <h2 className="font-inter text-2xl font-bold leading-10 text-arcade-white sm:text-3xl lg:text-[32px]">
