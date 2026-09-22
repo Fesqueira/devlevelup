@@ -64,9 +64,6 @@ export function LevelUpPath({ className }: LevelUpPathProps) {
                   {level.description}
                 </p>
               </div>
-              {level.locked && (
-                <LockIcon className="mt-auto size-3.5 text-arcade-cyan" />
-              )}
             </li>
             {index < levelUpCopy.levels.length - 1 && (
               <li className="flex items-center justify-center lg:w-24 lg:self-center">
