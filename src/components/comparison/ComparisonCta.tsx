@@ -1,6 +1,7 @@
 import { siteConfig } from '../../config'
 import { comparisonCopy } from '../../data/comparison'
 import { cn } from '../../lib/utils'
+import { Mascot } from '../ui/Mascot'
 
 interface ComparisonCtaProps {
   className?: string
@@ -10,11 +11,11 @@ export function ComparisonCta({ className }: ComparisonCtaProps) {
   return (
     <div className={cn('flex flex-col items-center gap-4', className)}>
       <div className="flex items-center gap-3 sm:gap-4">
-        <img
+        <Mascot
           src="/images/mascote-apontando.png"
           alt=""
           aria-hidden="true"
-          className="size-16 shrink-0 object-contain sm:size-20"
+          className="size-16 sm:size-20"
         />
         <a
           href={siteConfig.links.apoia}

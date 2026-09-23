@@ -1,6 +1,7 @@
 import { ProgressWidget } from '../components/powerup/ProgressWidget'
 import { TierCard } from '../components/powerup/TierCard'
 import { Glow } from '../components/ui/Glow'
+import { Mascot } from '../components/ui/Mascot'
 import { SectionHeader } from '../components/ui/SectionHeader'
 import { siteConfig } from '../config'
 import { powerUpCopy } from '../data/powerup'
@@ -62,12 +63,11 @@ export function PowerUp({ className }: PowerUpProps) {
         <div className="relative size-15">
           <div
             aria-hidden="true"
-            className="absolute inset-0 rounded-lg bg-[radial-gradient(50%_50%_at_50%_50%,var(--color-arcade-mascot-glow)_0%,var(--color-arcade-mascot-glow-mid)_50%,transparent_100%)] blur-[9px]"
+            className="absolute -inset-4 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,var(--color-arcade-mascot-glow)_0%,var(--color-arcade-mascot-glow-mid)_50%,transparent_100%)] blur-[16px]"
           />
-          <img
-            src="/images/mascote-soujunior.png"
+          <Mascot
             alt={powerUpCopy.cta.mascotAlt}
-            className="relative size-15 rounded-lg object-contain"
+            className="relative"
           />
         </div>
         <a

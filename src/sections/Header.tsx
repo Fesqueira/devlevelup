@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Mascot } from '../components/ui/Mascot'
 import {
   CloseIcon,
   MenuIcon,
@@ -56,11 +57,10 @@ export function Header({ className }: HeaderProps) {
         </nav>
 
         <div className="flex items-center gap-3">
-          <img
-            src="/images/mascote-soujunior.png"
+          <Mascot
             alt="Mascote SouJunior"
             loading="eager"
-            className="hidden size-15 rounded-lg object-contain sm:block"
+            className="hidden sm:block"
           />
           <a
             href={siteConfig.links.apoia}

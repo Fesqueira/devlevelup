@@ -85,6 +85,7 @@
   --color-arcade-purple-badge: rgba(139, 92, 246, 0.15);
   --color-arcade-mascot-glow: rgba(0, 240, 255, 0.5);
   --color-arcade-mascot-glow-mid: rgba(0, 240, 255, 0.2);
+  --drop-shadow-arcade-mascot: 0 4px 16px rgba(0, 240, 255, 0.25);
 
   --shadow-arcade-glow: 0 0 8px rgba(0, 240, 255, 0.25);
   --shadow-arcade-cta: 0 4px 16px rgba(253, 223, 1, 0.4);

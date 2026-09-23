@@ -1,6 +1,7 @@
 import { siteConfig } from '../../config'
 import { ctaCopy } from '../../data/cta'
 import { cn } from '../../lib/utils'
+import { Mascot } from '../ui/Mascot'
 import { BoltIcon } from '../ui/icons'
 
 interface CtaBannerProps {
@@ -22,10 +23,10 @@ export function CtaBanner({ className }: CtaBannerProps) {
       </h2>
 
       <div className="flex flex-none items-center justify-center gap-4 sm:gap-6">
-        <img
+        <Mascot
           src="/images/mascote-apontando.png"
           alt={ctaCopy.mascotAlt}
-          className="size-16 shrink-0 object-contain sm:size-20"
+          className="size-16 sm:size-20"
         />
         <a
           href={siteConfig.links.apoia}
