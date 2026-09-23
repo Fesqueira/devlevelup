@@ -32,6 +32,8 @@ export function FooterSocial({ className }: FooterSocialProps) {
               <li key={link.label}>
                 <a
                   href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 font-sans text-sm font-medium text-arcade-footer-text transition-colors hover:text-arcade-cyan"
                 >
                   <Icon className="size-3.5" />
@@ -44,6 +46,8 @@ export function FooterSocial({ className }: FooterSocialProps) {
       </div>
       <a
         href={siteConfig.links.apoia}
+        target="_blank"
+        rel="noopener noreferrer"
         className="inline-flex w-fit items-center justify-center gap-2 rounded-lg bg-arcade-cyan px-5 py-3 font-sans text-sm font-bold text-arcade-cta-text shadow-arcade-cta-cyan transition-colors hover:bg-arcade-cyan/90"
       >
         {'Apoie R$ 2,00+ no Apoia.se'}

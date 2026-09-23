@@ -72,6 +72,8 @@ export function PowerUp({ className }: PowerUpProps) {
         </div>
         <a
           href={siteConfig.links.apoia}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-lg bg-arcade-cyan px-6 py-3.5 font-sans text-base font-bold leading-6 text-arcade-950 shadow-arcade-cta-cyan-lg transition-colors hover:bg-arcade-secondary sm:px-8"
         >
           {powerUpCopy.cta.label}

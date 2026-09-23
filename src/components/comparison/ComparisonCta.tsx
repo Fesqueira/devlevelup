@@ -18,6 +18,8 @@ export function ComparisonCta({ className }: ComparisonCtaProps) {
         />
         <a
           href={siteConfig.links.apoia}
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-lg bg-arcade-cyan px-8 py-3.5 font-sans text-base font-bold leading-6 text-arcade-footer shadow-arcade-cta-cyan-lg transition-colors hover:bg-arcade-secondary"
         >
           {comparisonCopy.cta}

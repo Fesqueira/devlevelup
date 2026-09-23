@@ -64,6 +64,8 @@ export function Header({ className }: HeaderProps) {
           />
           <a
             href={siteConfig.links.apoia}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex h-10 items-center rounded-lg bg-arcade-cyan px-3 font-sans text-sm font-semibold text-arcade-950 shadow-arcade-badge transition-colors hover:bg-arcade-secondary sm:h-auto sm:px-5 sm:py-2.5"
           >
             <span className="sm:hidden">{'Apoiar'}</span>

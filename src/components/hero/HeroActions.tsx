@@ -13,6 +13,8 @@ export function HeroActions({ className }: HeroActionsProps) {
     <div className={cn('flex flex-wrap items-center gap-4', className)}>
       <Button
         href={siteConfig.links.apoia}
+        target="_blank"
+        rel="noopener noreferrer"
         variant="cyan"
         size="lg"
         className="rounded-xl px-7 py-3.5 font-sans tracking-[0.04em] shadow-arcade-cta-cyan after:hidden"
