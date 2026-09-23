@@ -60,16 +60,7 @@ export function PowerUp({ className }: PowerUpProps) {
       </div>
 
       <div className="relative z-10 flex items-center gap-4">
-        <div className="relative size-15">
-          <div
-            aria-hidden="true"
-            className="absolute -inset-4 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,var(--color-arcade-mascot-glow)_0%,var(--color-arcade-mascot-glow-mid)_50%,transparent_100%)] blur-[16px]"
-          />
-          <Mascot
-            alt={powerUpCopy.cta.mascotAlt}
-            className="relative"
-          />
-        </div>
+        <Mascot alt={powerUpCopy.cta.mascotAlt} glow />
         <a
           href={siteConfig.links.apoia}
           className="inline-flex items-center gap-2 rounded-lg bg-arcade-cyan px-6 py-3.5 font-inter text-base font-bold leading-6 text-arcade-950 shadow-arcade-cta-cyan-lg transition-colors hover:bg-arcade-secondary sm:px-8"
