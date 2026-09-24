@@ -53,7 +53,9 @@ export function Header({ className }: HeaderProps) {
 
     const id = href.slice(1)
     requestAnimationFrame(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      const target = document.getElementById(id)
+      target?.scrollIntoView({ behavior: 'smooth' })
+      target?.focus({ preventScroll: true })
     })
   }
 
@@ -128,51 +130,52 @@ export function Header({ className }: HeaderProps) {
         </div>
       </div>
 
-      {menuOpen && (
-        <nav
-          ref={menuRef}
-          id="menu-mobile"
-          className="border-t border-arcade-nav-border bg-arcade-navbar px-6 py-4 backdrop-blur md:hidden"
-          aria-label="Menu móvel"
-        >
-          <ul className="flex flex-col gap-4">
-            {navLinks.map((link) => {
-              const isActive = link.href.slice(1) === activeSection
-              return (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={() => handleMobileNavClick(link.href)}
-                    aria-current={isActive ? 'true' : undefined}
-                    className={cn(
-                      'relative font-sans text-sm font-medium transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-arcade-cyan after:transition-opacity',
-                      isActive
-                        ? 'text-arcade-cyan text-shadow-arcade-nav after:opacity-100'
-                        : 'text-arcade-nav-muted hover:text-arcade-cyan after:opacity-0',
-                    )}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              )
-            })}
-            <li>
-              <a
-                href={siteConfig.links.apoia}
-                target="_blank"
-                rel="noreferrer"
-                onClick={closeMenu}
-                className="inline-flex h-10 items-center rounded-lg bg-arcade-cyan px-3 font-sans text-sm font-semibold text-arcade-950 shadow-arcade-badge transition-colors hover:bg-arcade-secondary"
-              >
-                <span className="sm:hidden">{'Apoiar'}</span>
-                <span className="hidden sm:inline">
-                  {'Apoiar a partir de R$ 2,00'}
-                </span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      )}
+      <nav
+        ref={menuRef}
+        id="menu-mobile"
+        className={cn(
+          'border-t border-arcade-nav-border bg-arcade-navbar px-6 py-4 backdrop-blur md:hidden',
+          !menuOpen && 'hidden',
+        )}
+        aria-label="Menu móvel"
+      >
+        <ul className="flex flex-col gap-4">
+          {navLinks.map((link) => {
+            const isActive = link.href.slice(1) === activeSection
+            return (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={() => handleMobileNavClick(link.href)}
+                  aria-current={isActive ? 'true' : undefined}
+                  className={cn(
+                    'relative font-sans text-sm font-medium transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-arcade-cyan after:transition-opacity',
+                    isActive
+                      ? 'text-arcade-cyan text-shadow-arcade-nav after:opacity-100'
+                      : 'text-arcade-nav-muted hover:text-arcade-cyan after:opacity-0',
+                  )}
+                >
+                  {link.label}
+                </a>
+              </li>
+            )
+          })}
+          <li>
+            <a
+              href={siteConfig.links.apoia}
+              target="_blank"
+              rel="noreferrer"
+              onClick={closeMenu}
+              className="inline-flex h-10 items-center rounded-lg bg-arcade-cyan px-3 font-sans text-sm font-semibold text-arcade-950 shadow-arcade-badge transition-colors hover:bg-arcade-secondary"
+            >
+              <span className="sm:hidden">{'Apoiar'}</span>
+              <span className="hidden sm:inline">
+                {'Apoiar a partir de R$ 2,00'}
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
   )
 }
