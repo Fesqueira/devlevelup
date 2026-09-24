@@ -14,10 +14,17 @@ interface LevelUpPathProps {
 export function LevelUpPath({ className }: LevelUpPathProps) {
   const reduceMotion = useReducedMotion()
   const [unlockedCount, setUnlockedCount] = useState(1)
+  const [unlockAnnouncement, setUnlockAnnouncement] = useState('')
   const allUnlocked = unlockedCount >= levelUpCopy.levels.length
 
   function handleUnlock() {
+    const nextLevel = levelUpCopy.levels[unlockedCount]
     setUnlockedCount((count) => Math.min(count + 1, levelUpCopy.levels.length))
+    if (nextLevel) {
+      setUnlockAnnouncement(
+        `Nível ${nextLevel.level} (${nextLevel.name}) desbloqueado`,
+      )
+    }
   }
 
   return (
@@ -73,6 +80,8 @@ export function LevelUpPath({ className }: LevelUpPathProps) {
           return (
             <Fragment key={level.level}>
               <li
+                inert={!unlocked}
+                aria-hidden={!unlocked}
                 className={cn(
                   'relative flex w-full max-w-64 flex-col items-center gap-4 overflow-hidden rounded-2xl border p-6 text-center transition-[transform,border-color,box-shadow] duration-200 ease-in-out hover:-translate-y-0.5 motion-reduce:transform-none lg:w-52 lg:flex-none',
                   current
@@ -167,6 +176,10 @@ export function LevelUpPath({ className }: LevelUpPathProps) {
           {levelUpCopy.unlockCta}
         </Button>
       )}
+
+      <p className="sr-only" role="status">
+        {unlockAnnouncement}
+      </p>
     </div>
   )
 }
