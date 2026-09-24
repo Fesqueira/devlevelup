@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useRef, useState } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { siteConfig } from '../../config'
 import { levelUpCopy } from '../../data/levelup'
@@ -13,13 +13,16 @@ interface LevelUpPathProps {
 
 export function LevelUpPath({ className }: LevelUpPathProps) {
   const reduceMotion = useReducedMotion()
+  const unlockedRef = useRef(1)
   const [unlockedCount, setUnlockedCount] = useState(1)
   const [unlockAnnouncement, setUnlockAnnouncement] = useState('')
   const allUnlocked = unlockedCount >= levelUpCopy.levels.length
 
   function handleUnlock() {
-    const nextLevel = levelUpCopy.levels[unlockedCount]
-    setUnlockedCount((count) => Math.min(count + 1, levelUpCopy.levels.length))
+    const next = Math.min(unlockedRef.current + 1, levelUpCopy.levels.length)
+    unlockedRef.current = next
+    setUnlockedCount(next)
+    const nextLevel = levelUpCopy.levels[next - 1]
     if (nextLevel) {
       setUnlockAnnouncement(
         `Nível ${nextLevel.level} (${nextLevel.name}) desbloqueado`,
