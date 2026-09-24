@@ -1,5 +1,6 @@
-import type { SquadRole } from '../../data/squad'
+import type { CSSProperties } from 'react'
 import { useId } from 'react'
+import type { SquadRole } from '../../data/squad'
 import { SquadAvatar } from './SquadAvatar'
 import { SquadTooltip } from './SquadTooltip'
 import { cn } from '../../lib/utils'
@@ -21,6 +22,7 @@ export function SquadCard({ role, floatDelay = 0, className }: SquadCardProps) {
         'group relative flex cursor-pointer flex-col items-center outline-none',
         className,
       )}
+      style={{ '--squad-accent': role.accent } as CSSProperties}
     >
       <SquadTooltip
         id={tooltipId}
@@ -28,18 +30,18 @@ export function SquadCard({ role, floatDelay = 0, className }: SquadCardProps) {
         items={role.skills}
         className="hidden group-hover:block group-focus-visible:block"
       />
-      <div className="flex flex-col items-center gap-1.5">
-        <span className="flex h-7 items-center justify-center whitespace-nowrap rounded border border-arcade-cyan-badge-border bg-arcade-level px-4 font-pixel text-[11px] leading-none text-arcade-cyan shadow-arcade-glow">
+      <div className="flex flex-col items-center">
+        <span className="mb-1.5 whitespace-nowrap rounded border border-(--squad-accent) bg-arcade-footer/88 px-2.5 py-1.25 font-pixel text-[9px] tracking-[0.04em] text-(--squad-accent) transition duration-200 ease-out group-hover:bg-(--squad-accent) group-hover:text-arcade-footer group-hover:shadow-[0_0_14px_color-mix(in_srgb,var(--squad-accent)_40%,transparent)] group-focus-visible:bg-(--squad-accent) group-focus-visible:text-arcade-footer group-focus-visible:shadow-[0_0_14px_color-mix(in_srgb,var(--squad-accent)_40%,transparent)]">
           {role.label}
         </span>
         <span
           aria-hidden="true"
-          className="size-2.25 rotate-45 border border-arcade-cyan-badge-border bg-arcade-level"
+          className="mb-1 size-0 border-x-5 border-t-7 border-x-transparent border-t-(--squad-accent) transition duration-200 ease-out group-hover:drop-shadow-[0_0_4px_var(--squad-accent)] group-focus-visible:drop-shadow-[0_0_4px_var(--squad-accent)]"
         />
       </div>
       <div className="relative mt-4">
         <div
-          className="animate-sprite-float drop-shadow-arcade-sprite transition-[filter] duration-200 ease-out group-hover:drop-shadow-arcade-sprite-hover group-focus-visible:drop-shadow-arcade-sprite-hover motion-reduce:animate-none"
+          className="animate-sprite-float drop-shadow-arcade-sprite transition-[filter] duration-200 ease-out group-hover:drop-shadow-[0_0_18px_color-mix(in_srgb,var(--squad-accent)_53%,transparent)] group-focus-visible:drop-shadow-[0_0_18px_color-mix(in_srgb,var(--squad-accent)_53%,transparent)] motion-reduce:animate-none"
           style={{ animationDelay: `${floatDelay}s` }}
         >
           <SquadAvatar

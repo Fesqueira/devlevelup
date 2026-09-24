@@ -1,6 +1,7 @@
 export interface SquadRole {
   label: string
   name: string
+  accent: string
   frames: readonly string[]
   skills: readonly string[]
   position: { x: number; y: number }
@@ -16,6 +17,7 @@ export const squadCopy = {
     {
       label: 'PRODUCT MANAGER',
       name: 'Product Manager',
+      accent: 'var(--color-arcade-role-pm)',
       position: { x: 18, y: 60 },
       skills: [
         'Define roadmap e prioridades',
@@ -33,6 +35,7 @@ export const squadCopy = {
     {
       label: 'UX/UI DESIGNER',
       name: 'UX/UI Designer',
+      accent: 'var(--color-arcade-role-ux)',
       position: { x: 40, y: 50 },
       skills: [
         'Pesquisa com usuários',
@@ -50,6 +53,7 @@ export const squadCopy = {
     {
       label: 'DEVELOPER',
       name: 'Developer',
+      accent: 'var(--color-arcade-role-dev)',
       position: { x: 61, y: 40 },
       skills: [
         'Frontend e Backend',
@@ -67,6 +71,7 @@ export const squadCopy = {
     {
       label: 'QA ENGINEER',
       name: 'QA Engineer',
+      accent: 'var(--color-arcade-role-qa)',
       position: { x: 83, y: 30 },
       skills: [
         'Plano de testes',
