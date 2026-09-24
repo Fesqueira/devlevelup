@@ -84,6 +84,8 @@
   --color-arcade-panel: rgba(9, 13, 22, 0.18);
   --color-arcade-hud: rgba(10, 22, 40, 0.6);
   --color-arcade-stats-bar: rgba(9, 13, 22, 0.15);
+  --color-arcade-tooltip: rgba(15, 23, 42, 0.85);
+  --color-arcade-tooltip-border: rgba(0, 240, 255, 0.4);
   --background-image-hero-scrim: linear-gradient(
     90deg,
     rgba(9, 13, 22, 0.45) 0%,
@@ -106,7 +108,35 @@
   --shadow-arcade-panel: 0 0 30px rgba(0, 240, 255, 0.08);
   --shadow-arcade-stats-bar: 0 4px 12px rgba(0, 0, 0, 0.2);
   --shadow-arcade-hero-cta: 0 0 12px rgba(0, 240, 255, 0.35);
+  --shadow-arcade-tooltip:
+    0 0 28px rgba(0, 240, 255, 0.13), 0 8px 32px rgba(0, 0, 0, 0.6);
   --drop-shadow-arcade-mascot: 0 0 12px rgba(0, 240, 255, 0.3);
+  --drop-shadow-arcade-sprite: 0 4px 14px rgba(0, 0, 0, 0.7);
+  --drop-shadow-arcade-sprite-hover: 0 0 18px rgba(0, 240, 255, 0.53);
+
+  --animate-sprite-float: sprite-float 2.4s ease-in-out infinite;
+  --animate-tooltip-enter: tooltip-enter 150ms ease-out both;
+
+  @keyframes sprite-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes tooltip-enter {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 
   --text-shadow-arcade-title:
     0 0 18px rgba(0, 240, 255, 0.2), 0 0 10px rgba(0, 240, 255, 0.4);
