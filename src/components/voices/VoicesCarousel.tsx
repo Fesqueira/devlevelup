@@ -40,18 +40,18 @@ export function VoicesCarousel({
           let offset = activeIndex - index
           if (offset > span) offset -= testimonials.length
           if (offset < -span) offset += testimonials.length
+          const isActive = offset === 0
           return (
             <div
               key={testimonial.name}
+              inert={!isActive}
+              aria-hidden={!isActive}
               className={cn(
                 'absolute left-1/2 top-1/2 -translate-y-1/2 transition-all duration-500',
                 offsetClasses[offset],
               )}
             >
-              <TestimonialCard
-                testimonial={testimonial}
-                active={offset === 0}
-              />
+              <TestimonialCard testimonial={testimonial} active={isActive} />
             </div>
           )
         })}
@@ -60,6 +60,10 @@ export function VoicesCarousel({
       <div className="w-full max-w-90 lg:hidden">
         <TestimonialCard testimonial={testimonials[activeIndex]} active />
       </div>
+
+      <p className="sr-only" role="status">
+        {activeTestimonial.name}
+      </p>
 
       <div className="flex items-center gap-4">
         <button

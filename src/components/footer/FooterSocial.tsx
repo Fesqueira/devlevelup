@@ -4,8 +4,9 @@ import {
   GitHubIcon,
   WhatsAppIcon,
 } from '../ui/icons'
+import { Button } from '../ui/Button'
 import { siteConfig } from '../../config'
-import { socialLinks } from '../../data/footer'
+import { footerCopy, socialLinks } from '../../data/footer'
 import { cn } from '../../lib/utils'
 
 interface FooterSocialProps {
@@ -23,7 +24,7 @@ export function FooterSocial({ className }: FooterSocialProps) {
     <div className={cn('flex flex-col gap-6', className)}>
       <div className="flex flex-col gap-4">
         <h3 className="font-sans text-base font-semibold text-arcade-footer-heading">
-          {'Canais Oficiais'}
+          {footerCopy.socialTitle}
         </h3>
         <ul className="flex flex-col gap-4">
           {socialLinks.map((link) => {
@@ -33,8 +34,8 @@ export function FooterSocial({ className }: FooterSocialProps) {
                 <a
                   href={link.href}
                   target="_blank"
-                  rel="noreferrer"
-                  className="flex items-center gap-2 font-sans text-sm font-medium text-arcade-footer-text transition-colors hover:text-arcade-cyan"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-sans text-sm font-medium text-arcade-footer-text transition-colors hover:text-arcade-cyan"
                 >
                   <Icon className="size-3.5" />
                   {link.label}
@@ -44,15 +45,15 @@ export function FooterSocial({ className }: FooterSocialProps) {
           })}
         </ul>
       </div>
-      <a
+      <Button
         href={siteConfig.links.apoia}
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex w-fit items-center justify-center gap-2 rounded-lg bg-arcade-cyan px-5 py-3 font-sans text-sm font-bold text-arcade-cta-text shadow-arcade-cta-cyan transition-colors hover:bg-arcade-cyan/90"
+        variant="cyan"
+        size="lg"
+        className="w-fit rounded-lg px-4 py-3.5 font-sans font-bold text-[13px] tracking-[0.04em] shadow-arcade-cta-cyan after:hidden lg:rounded-xl lg:px-5"
       >
-        {'Apoie R$ 2,00+ no Apoia.se'}
+        {footerCopy.ctaLabel}
         <ArrowRightIcon className="size-3.5" />
-      </a>
+      </Button>
     </div>
   )
 }

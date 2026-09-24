@@ -1,38 +1,45 @@
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
 import { cn } from '../../lib/utils'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+type ButtonBaseProps = {
   variant?: 'primary' | 'secondary' | 'ghost' | 'cta' | 'cyan'
   size?: 'sm' | 'md' | 'lg'
-  href?: string
-  target?: string
-  rel?: string
+  className?: string
 }
+
+type ButtonProps = ButtonBaseProps &
+  (
+    | ({ href: string } & AnchorHTMLAttributes<HTMLAnchorElement>)
+    | ({ href?: undefined } & ButtonHTMLAttributes<HTMLButtonElement>)
+  )
 
 export function Button({
   className,
   variant = 'primary',
   size = 'md',
-  href,
-  target,
-  rel,
   ...props
 }: ButtonProps) {
   const classes = cn(
-    'inline-flex items-center justify-center gap-2 font-display uppercase tracking-wider transition-colors after:block after:h-0.5 focus:outline-none',
+    'inline-flex items-center justify-center gap-2 font-display uppercase tracking-wider transition-colors after:block after:h-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-arcade-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-arcade-background',
     variantClasses[variant],
     sizeClasses[size],
     className,
   )
 
-  if (href) {
+  if (props.href !== undefined) {
+    const {
+      href,
+      target = '_blank',
+      rel = 'noreferrer',
+      ...anchorProps
+    } = props
     return (
       <a
         href={href}
-        target={target ?? '_blank'}
-        rel={rel ?? 'noreferrer'}
+        target={target}
+        rel={rel}
         className={classes}
-        {...(props as unknown as AnchorHTMLAttributes<HTMLAnchorElement>)}
+        {...anchorProps}
       />
     )
   }

@@ -17,7 +17,7 @@ export function FooterBrand({ className }: FooterBrandProps) {
           'Aceleração profissional de juniores na tecnologia por meio de projetos reais e squads colaborativas.'
         }
       </p>
-      <span className="inline-flex w-fit items-center rounded-full border border-arcade-cyan px-2.5 py-1">
+      <span className="inline-flex w-fit items-center whitespace-nowrap rounded-full border border-arcade-cyan px-2.5 py-1">
         <span className="font-sora text-xs font-bold text-arcade-cyan">
           {'[ECOSSISTEMA OPEN-SOURCE]'}
         </span>

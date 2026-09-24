@@ -5,8 +5,8 @@ export const siteConfig = {
   language: 'pt-BR',
   links: {
     apoia: 'https://apoia.se/soujunior',
-    github: 'https://github.com',
-    discord: 'https://discord.gg/soujunior',
-    whatsapp: 'https://wa.me/5500000000000',
+    github: 'https://github.com/SouJunior',
+    discord: 'https://discord.gg/FkBcf3vdQZ',
+    whatsapp: 'https://chat.whatsapp.com/JJzCMlqMKlw1YOhOk7QB3W',
   },
 } as const

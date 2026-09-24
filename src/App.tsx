@@ -8,36 +8,19 @@ import { LevelUp } from './sections/LevelUp'
 import { PowerUp } from './sections/PowerUp'
 import { Squad } from './sections/Squad'
 import { Voices } from './sections/Voices'
-import { Reveal } from './components/ui/Reveal'
 
 export default function App() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Header />
-      <Reveal>
-        <Hero />
-      </Reveal>
-      <Reveal>
-        <Comparison />
-      </Reveal>
-      <Reveal>
-        <LevelUp />
-      </Reveal>
-      <Reveal>
-        <CTA />
-      </Reveal>
-      <Reveal>
-        <Squad />
-      </Reveal>
-      <Reveal>
-        <Impact />
-      </Reveal>
-      <Reveal>
-        <Voices />
-      </Reveal>
-      <Reveal>
-        <PowerUp />
-      </Reveal>
+      <Hero />
+      <Comparison />
+      <LevelUp />
+      <CTA />
+      <Squad />
+      <Impact />
+      <Voices />
+      <PowerUp />
       <Footer />
     </div>
   )

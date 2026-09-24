@@ -14,6 +14,8 @@ export interface LevelUpCopy {
   xpLabel: string
   unlockCta: string
   unlockCompleteCta: string
+  prevSlideLabel: string
+  nextSlideLabel: string
   levels: LevelData[]
 }
 
@@ -27,6 +29,8 @@ export const levelUpCopy: LevelUpCopy = {
   xpLabel: '+XP',
   unlockCta: 'Desbloquear personagem',
   unlockCompleteCta: 'Ajude no Apoia.se',
+  prevSlideLabel: 'Personagem anterior',
+  nextSlideLabel: 'Próximo personagem',
   levels: [
     {
       level: 'LV. 1',
