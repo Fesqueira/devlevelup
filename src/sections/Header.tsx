@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   CloseIcon,
   MenuIcon,
@@ -17,6 +17,8 @@ interface HeaderProps {
 
 export function Header({ className }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false)
+  const menuRef = useRef<HTMLElement | null>(null)
+  const toggleRef = useRef<HTMLButtonElement | null>(null)
 
   const sectionIds = useMemo(
     () => navLinks.map((link) => link.href.slice(1)),
@@ -24,8 +26,29 @@ export function Header({ className }: HeaderProps) {
   )
   const activeSection = useActiveSection(sectionIds)
 
-  const handleMobileNavClick = (href: string) => {
+  useEffect(() => {
+    if (!menuOpen) return
+
+    menuRef.current?.querySelector<HTMLAnchorElement>('a')?.focus()
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+        toggleRef.current?.focus()
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [menuOpen])
+
+  const closeMenu = () => {
     setMenuOpen(false)
+    toggleRef.current?.focus()
+  }
+
+  const handleMobileNavClick = (href: string) => {
+    closeMenu()
     if (!href.startsWith('#')) return
 
     const id = href.slice(1)
@@ -88,10 +111,12 @@ export function Header({ className }: HeaderProps) {
             {'Apoiar a partir de R$ 2,00'}
           </a>
           <button
+            ref={toggleRef}
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
             aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={menuOpen}
+            aria-controls="menu-mobile"
             className="flex h-10 w-10 items-center justify-center rounded-lg text-arcade-ghost transition-colors hover:text-arcade-cyan md:hidden"
           >
             {menuOpen ? (
@@ -105,6 +130,8 @@ export function Header({ className }: HeaderProps) {
 
       {menuOpen && (
         <nav
+          ref={menuRef}
+          id="menu-mobile"
           className="border-t border-arcade-nav-border bg-arcade-navbar px-6 py-4 backdrop-blur md:hidden"
           aria-label="Menu móvel"
         >
@@ -134,7 +161,7 @@ export function Header({ className }: HeaderProps) {
                 href={siteConfig.links.apoia}
                 target="_blank"
                 rel="noreferrer"
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMenu}
                 className="inline-flex h-10 items-center rounded-lg bg-arcade-cyan px-3 font-sans text-sm font-semibold text-arcade-950 shadow-arcade-badge transition-colors hover:bg-arcade-secondary"
               >
                 <span className="sm:hidden">{'Apoiar'}</span>
