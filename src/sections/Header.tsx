@@ -53,7 +53,9 @@ export function Header({ className }: HeaderProps) {
 
     const id = href.slice(1)
     requestAnimationFrame(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      const target = document.getElementById(id)
+      target?.scrollIntoView({ behavior: 'smooth' })
+      target?.focus({ preventScroll: true })
     })
   }
 

@@ -16,8 +16,9 @@ export function Hero({ className }: HeroProps) {
   return (
     <section
       id="inicio"
+      tabIndex={-1}
       className={cn(
-        'relative flex flex-col items-center gap-6 overflow-hidden bg-arcade-background py-16 lg:min-h-svh lg:flex-row lg:justify-start lg:px-20 lg:py-30',
+        'relative flex flex-col items-center gap-6 overflow-hidden bg-arcade-background py-16 focus:outline-none lg:min-h-svh lg:flex-row lg:justify-start lg:px-20 lg:py-30',
         className,
       )}
     >

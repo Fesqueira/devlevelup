@@ -13,8 +13,9 @@ export function Squad({ className }: SquadProps) {
   return (
     <section
       id="squads"
+      tabIndex={-1}
       className={cn(
-        'relative flex flex-col items-center gap-16 overflow-hidden bg-arcade-footer px-6 py-20 lg:px-20 lg:py-30',
+        'relative flex flex-col items-center gap-16 overflow-hidden bg-arcade-footer px-6 py-20 focus:outline-none lg:px-20 lg:py-30',
         className,
       )}
     >

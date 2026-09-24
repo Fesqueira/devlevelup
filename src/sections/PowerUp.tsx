@@ -15,8 +15,9 @@ export function PowerUp({ className }: PowerUpProps) {
   return (
     <section
       id="power-up"
+      tabIndex={-1}
       className={cn(
-        'relative flex flex-col items-center gap-10 overflow-hidden bg-arcade-footer px-6 py-16 lg:px-20 lg:py-30',
+        'relative flex flex-col items-center gap-10 overflow-hidden bg-arcade-footer px-6 py-16 focus:outline-none lg:px-20 lg:py-30',
         className,
       )}
     >
