@@ -17,12 +17,16 @@ export function CountUp({ value, className }: CountUpProps) {
   const { ref, inView } = useInView<HTMLSpanElement>()
   const { prefix, number, suffix } = parseValue(value)
   const current = useCountUp(number, { start: inView })
+  const finalValue = `${prefix}${number}${suffix}`
 
   return (
     <span ref={ref} className={cn('tabular-nums', className)}>
-      {prefix}
-      {current}
-      {suffix}
+      <span aria-hidden="true">
+        {prefix}
+        {current}
+        {suffix}
+      </span>
+      <span className="sr-only">{finalValue}</span>
     </span>
   )
 }
