@@ -22,10 +22,15 @@ export function VoicesCarousel({
   className,
 }: VoicesCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [announcement, setAnnouncement] = useState('')
   const activeTestimonial = testimonials[activeIndex]
 
   const goTo = (index: number) => {
-    setActiveIndex((index + testimonials.length) % testimonials.length)
+    const nextIndex = (index + testimonials.length) % testimonials.length
+    setActiveIndex(nextIndex)
+    setAnnouncement(
+      `${testimonials[nextIndex].name}: ${testimonials[nextIndex].quote}`,
+    )
   }
 
   return (
@@ -45,6 +50,9 @@ export function VoicesCarousel({
           return (
             <div
               key={testimonial.name}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`Depoimento ${index + 1} de ${testimonials.length}`}
               inert={!isActive}
               aria-hidden={!isActive}
               className={cn(
@@ -63,7 +71,7 @@ export function VoicesCarousel({
       </div>
 
       <p className="sr-only" role="status">
-        {activeTestimonial.name}
+        {announcement}
       </p>
 
       <div className="flex items-center gap-4">
