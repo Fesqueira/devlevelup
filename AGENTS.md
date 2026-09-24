@@ -30,8 +30,7 @@ Fluxo **Gitflow clássico** (detalhes em `docs/git-branches.md`):
 Regras:
 
 - Nunca commit direto em `main` (produção) — só via `release/*`/`hotfix/*` com PR, merge `--no-ff` e tag semver.
-- **Push direto em `develop`**: fluxo do dia a dia para colaboradores com permissão de escrita. Sempre `git fetch upstream && git pull --rebase` antes de commitar e rodar `lint` + `format:check` + `build` antes de push; o CI valida cada push em `develop`.
-- `feature/*`, `fix/*` e `chore/*` abrem PR para `develop` (entregas grandes, releases e contribuidores sem push).
+- `feature/*`, `fix/*` e `chore/*` sempre abrem PR para `develop` (merge com **squash**).
 - `release/*` e `hotfix/*` abrem PR para `main` (com tag semver) e depois são mesclados de volta em `develop`.
 - Merge em `develop` com **squash**; merge de `release/*`/`hotfix/*` em `main` com **merge --no-ff** (preserva o ponto de release).
 
@@ -73,10 +72,9 @@ Mensagens em português, descritivas. Um commit = uma mudança coesa.
 ## Pull requests / review
 
 - PR mínimo 1 reviewer; QA veta/libera cada PR via preview da Vercel
-- `feature/*`, `fix/*` e `chore/*` → PR para `develop` (merge com **squash**) — usados para entregas grandes/releases e contribuidores sem push
+- `feature/*`, `fix/*` e `chore/*` → PR para `develop` (merge com **squash**) — fluxo padrão para todas as entregas
 - `release/*` e `hotfix/*` → PR para `main` (merge com **--no-ff** + tag semver) e volta para `develop`
 - Checklist no PR: QA ok no preview + `lint` + `format:check` + `build` verdes
-- Colaboradores com push podem entregar direto em `develop` (ver Branches) sem abrir PR
 
 ## Docs
 

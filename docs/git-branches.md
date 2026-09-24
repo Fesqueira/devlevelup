@@ -30,7 +30,7 @@ Padrões de fluxo Git do DevLevelUp, baseados no **Gitflow clássico** (Vincent 
 
 ### Feature / fix / chore
 
-**Fluxo com PR** (entregas grandes, releases e contribuidores sem push):
+**Fluxo com PR** (fluxo padrão para todas as entregas):
 
 1. A partir de `develop` atualizado, criar a branch:
 
@@ -43,13 +43,7 @@ Padrões de fluxo Git do DevLevelUp, baseados no **Gitflow clássico** (Vincent 
 2. Commitar (Conventional Commits) e abrir PR para `develop`.
 3. Merge em `develop` com **squash**.
 
-**Push direto em `develop`** (colaboradores com permissão de escrita, trabalho do dia a dia):
-
-1. Sempre sincronizar antes: `git fetch upstream && git pull --rebase`.
-2. Rodar `npm run lint` + `npm run format:check` + `npm run build`.
-3. Commitar (Conventional Commits) e `git push upstream develop` — o CI valida cada push.
-
-> **Trabalho em dupla**: como o time mexe na página inteira junto, o fluxo recomendado é **um ramo compartilhado por vez** (develop ou um `feature/*` único), com `git pull --rebase` antes de cada push. Evita PRs paralelos tocando os mesmos arquivos e elimina conflitos entre devs.
+> **Trabalho em dupla**: como o time mexe na página inteira junto, o fluxo recomendado é **um ramo compartilhado por vez** (um `feature/*` único), com `git pull --rebase` antes de cada push. Evita PRs paralelos tocando os mesmos arquivos e elimina conflitos entre devs.
 
 ### Release
 
@@ -100,9 +94,9 @@ Padrões de fluxo Git do DevLevelUp, baseados no **Gitflow clássico** (Vincent 
 ## Regras
 
 - Trabalhar sempre a partir de `develop` atualizado (features/fixes/chores) ou `main` (hotfixes).
-- Nunca commitar direto em `main`. Colaboradores com permissão de escrita fazem **push direto em `develop`** no dia a dia: sempre `git fetch upstream && git pull --rebase` antes de commitar, rodar `lint` + `format:check` + `build` antes do push; o CI valida cada push.
+- Nunca commitar direto em `main` nem em `develop` — toda entrega passa por PR.
 - `main` só recebe merges de `release/*` e `hotfix/*` (via PR, com **--no-ff**).
-- `develop` recebe merges de `feature/*`, `fix/*`, `chore/*` (via PR, com **squash** — entregas grandes, releases e contribuidores sem push) e de volta de `release/*`/`hotfix/*`.
+- `develop` recebe merges de `feature/*`, `fix/*`, `chore/*` (via PR, com **squash**) e de volta de `release/*`/`hotfix/*`.
 
 ## Commits
 
@@ -149,8 +143,7 @@ Regras:
 ## PRs e review
 
 - PR deve ter **mínimo 1 reviewer**; o **QA** veta/libera cada PR via preview da Vercel.
-- `feature/*`, `fix/*` e `chore/*` → PR para `develop` (merge com **squash**) — entregas grandes, releases e contribuidores sem push.
-- Colaboradores com push entregam direto em `develop` (ver Regras e Feature/fix/chore), sem PR.
+- `feature/*`, `fix/*` e `chore/*` → PR para `develop` (merge com **squash**) — fluxo padrão para todas as entregas.
 - `release/*` e `hotfix/*` → PR para `main` (merge com **--no-ff** + tag semver) e volta para `develop`.
 - Checklist obrigatório do PR (template em `.github/PULL_REQUEST_TEMPLATE.md`):
   - QA aprovou no preview da Vercel
