@@ -11,7 +11,7 @@ export function HeroStats({ className }: HeroStatsProps) {
   return (
     <div
       className={cn(
-        'flex items-center justify-between gap-3 rounded-xl border border-arcade-cyan bg-arcade-white/3 px-3 py-4 shadow-arcade-stats-bar backdrop-blur-md lg:rounded-2xl lg:bg-arcade-stats-bar lg:px-4 lg:py-3',
+        'flex items-center justify-between gap-3 border border-arcade-cyan bg-arcade-white/3 px-3 py-4 shadow-arcade-stats-bar backdrop-blur-md lg:bg-arcade-stats-bar lg:px-4 lg:py-3',
         className,
       )}
     >
