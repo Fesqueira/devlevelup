@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   CloseIcon,
   MenuIcon,
@@ -15,8 +15,55 @@ interface HeaderProps {
   className?: string
 }
 
+const HEADER_OFFSET = 96
+
 export function Header({ className }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false)
+  const menuRef = useRef<HTMLElement | null>(null)
+  const toggleRef = useRef<HTMLButtonElement | null>(null)
+
+  const sectionIds = useMemo(
+    () => navLinks.map((link) => link.href.slice(1)),
+    [],
+  )
+  const activeSection = useActiveSection(sectionIds)
+
+  useEffect(() => {
+    if (!menuOpen) return
+
+    menuRef.current?.querySelector<HTMLAnchorElement>('a')?.focus()
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false)
+        toggleRef.current?.focus()
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [menuOpen])
+
+  const closeMenu = () => {
+    setMenuOpen(false)
+    toggleRef.current?.focus()
+  }
+
+  const handleNavClick = (href: string) => {
+    if (!href.startsWith('#')) return
+
+    const target = document.getElementById(href.slice(1))
+    if (!target) return
+
+    const top =
+      target.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET
+    window.scrollTo({ top, behavior: 'smooth' })
+  }
+
+  const handleMobileNavClick = (href: string) => {
+    closeMenu()
+    requestAnimationFrame(() => handleNavClick(href))
+  }
 
   const sectionIds = useMemo(
     () => navLinks.map((link) => link.href.slice(1)),
@@ -63,6 +110,10 @@ export function Header({ className }: HeaderProps) {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(event) => {
+                  event.preventDefault()
+                  handleNavClick(link.href)
+                }}
                 aria-current={isActive ? 'true' : undefined}
                 className={cn(
                   'relative font-sans text-sm font-medium transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-arcade-cyan after:transition-opacity',
@@ -85,13 +136,15 @@ export function Header({ className }: HeaderProps) {
             rel="noreferrer"
             className="hidden h-10 items-center rounded-lg bg-arcade-cyan px-3 font-sans text-sm font-semibold text-arcade-950 shadow-arcade-badge transition-colors hover:bg-arcade-secondary md:inline-flex md:px-5 md:py-2.5"
           >
-            {'Apoiar a partir de R$ 2,00'}
+            {'Apoie a partir de R$ 2'}
           </a>
           <button
+            ref={toggleRef}
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
             aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={menuOpen}
+            aria-controls="menu-mobile"
             className="flex h-10 w-10 items-center justify-center rounded-lg text-arcade-ghost transition-colors hover:text-arcade-cyan md:hidden"
           >
             {menuOpen ? (
@@ -105,6 +158,8 @@ export function Header({ className }: HeaderProps) {
 
       {menuOpen && (
         <nav
+          ref={menuRef}
+          id="menu-mobile"
           className="border-t border-arcade-nav-border bg-arcade-navbar px-6 py-4 backdrop-blur md:hidden"
           aria-label="Menu móvel"
         >
@@ -115,7 +170,10 @@ export function Header({ className }: HeaderProps) {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    onClick={() => handleMobileNavClick(link.href)}
+                    onClick={(event) => {
+                      event.preventDefault()
+                      handleMobileNavClick(link.href)
+                    }}
                     aria-current={isActive ? 'true' : undefined}
                     className={cn(
                       'relative font-sans text-sm font-medium transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-arcade-cyan after:transition-opacity',
@@ -134,7 +192,7 @@ export function Header({ className }: HeaderProps) {
                 href={siteConfig.links.apoia}
                 target="_blank"
                 rel="noreferrer"
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMenu}
                 className="inline-flex h-10 items-center rounded-lg bg-arcade-cyan px-3 font-sans text-sm font-semibold text-arcade-950 shadow-arcade-badge transition-colors hover:bg-arcade-secondary"
               >
                 <span className="sm:hidden">{'Apoiar'}</span>

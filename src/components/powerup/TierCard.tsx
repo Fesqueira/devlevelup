@@ -27,14 +27,16 @@ export function TierCard({
         className,
       )}
     >
-      {featured && featuredLabel && (
-        <span className="self-start rounded-full border border-arcade-purple-glow bg-arcade-purple-badge px-2.5 py-1.5 font-sora text-xs font-bold uppercase tracking-wider text-arcade-purple-glow">
-          {featuredLabel}
-        </span>
-      )}
-      <h3 className="font-sans text-xl font-semibold leading-6 text-arcade-footer-heading">
-        {name}
-      </h3>
+      <div className="flex items-center justify-between gap-2">
+        <h3 className="font-sans text-xl font-semibold leading-6 text-arcade-footer-heading">
+          {name}
+        </h3>
+        {featured && featuredLabel && (
+          <span className="shrink-0 rounded-full border border-arcade-purple-glow bg-arcade-purple-badge px-2.5 py-1.5 font-sora text-xs font-bold uppercase tracking-wider text-arcade-purple-glow">
+            {featuredLabel}
+          </span>
+        )}
+      </div>
       <p
         className={cn(
           'font-sans font-bold leading-8',

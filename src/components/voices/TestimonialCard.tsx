@@ -55,37 +55,26 @@ export function TestimonialCard({
   return (
     <article
       className={cn(
-        'flex h-[460px] w-70 flex-col gap-5 overflow-hidden rounded-2xl border bg-arcade-powerup-card p-6 transition-[border-color,box-shadow] duration-300 motion-reduce:transition-none',
+        'flex w-70 flex-col gap-6 rounded-2xl border bg-arcade-comparison-card p-8 transition-[transform,border-color,box-shadow] duration-200 ease-in-out hover:-translate-y-0.5 motion-reduce:transform-none',
         active
-          ? 'border-arcade-voice-cyan/50 shadow-arcade-voice-featured'
-          : 'border-white/10',
+          ? 'border-arcade-cyan shadow-arcade-card-glow hover:border-arcade-purple-glow hover:shadow-arcade-tier-featured'
+          : 'border-arcade-nav-border hover:border-arcade-cyan/60 hover:shadow-arcade-card-glow',
         className,
       )}
     >
       <div className="flex items-center gap-3">
         <span
           aria-hidden="true"
-          className={cn('h-8 w-1 shrink-0 rounded-full', color.accent)}
-        />
-        <span
-          className={cn(
-            'inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 font-sora text-[10px] font-bold uppercase tracking-wide',
-            color.border,
-            color.bg,
-            color.text,
-          )}
+          className="font-sans text-[28px] font-bold leading-9 text-arcade-cyan"
         >
-          <Quote className="size-3" aria-hidden="true" />
-          {testimonial.category}
+          ❝
+        </span>
+        <span className="rounded-full border border-arcade-cyan-badge-border bg-arcade-cyan-badge px-2.5 py-0.5 font-sora text-[10px] font-bold uppercase tracking-wide text-arcade-cyan">
+          {testimonial.topic}
         </span>
       </div>
 
-      <p
-        className={cn(
-          'min-h-0 flex-1 overflow-hidden font-sans leading-6',
-          active ? 'text-lg font-semibold text-white' : 'text-sm text-white/60',
-        )}
-      >
+      <p className="font-sans text-lg leading-6 text-arcade-footer-heading">
         {testimonial.quote}
       </p>
 
@@ -95,26 +84,16 @@ export function TestimonialCard({
       />
 
       <div className="flex items-center gap-3">
-        <span
-          aria-hidden="true"
-          className={cn(
-            'flex size-11 shrink-0 items-center justify-center rounded-full font-sans text-base font-bold',
-            color.bg,
-            color.text,
-          )}
-        >
-          {initial}
-        </span>
-        <div className="flex min-w-0 flex-col gap-0.5">
-          <p className="truncate font-sans text-[15px] font-bold leading-5 text-white">
+        <img
+          src={testimonial.avatar}
+          alt={`Foto de ${testimonial.name}`}
+          className="size-12 rounded-full border-[1.5px] border-arcade-cyan object-cover"
+        />
+        <div className="flex flex-col gap-1">
+          <p className="font-sans text-[15px] font-bold leading-5 text-arcade-footer-heading">
             {testimonial.name}
           </p>
-          <p
-            className={cn(
-              'truncate font-sora text-[10px] font-bold uppercase tracking-wider',
-              color.text,
-            )}
-          >
+          <span className="rounded-full border border-arcade-cyan-badge-border bg-arcade-cyan-badge px-2.5 py-0.5 font-sora text-[11px] font-bold uppercase leading-3.5 text-arcade-cyan">
             {testimonial.role}
           </p>
           <p className="truncate font-roboto-flex text-[11px] leading-4 text-arcade-nav-muted">
@@ -126,13 +105,8 @@ export function TestimonialCard({
       <div className="flex flex-wrap gap-2">
         {testimonial.tags.map((tag) => (
           <span
-            key={tag.label}
-            className={cn(
-              'inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 font-sora text-[10px] font-bold leading-3.5',
-              color.border,
-              color.bg,
-              color.text,
-            )}
+            key={badge}
+            className="rounded-full border border-arcade-purple-glow bg-arcade-footer px-2.5 py-1 font-sora text-[10px] font-bold leading-3.5 text-arcade-purple-glow"
           >
             <tag.icon className="size-3" aria-hidden="true" />
             {tag.label}

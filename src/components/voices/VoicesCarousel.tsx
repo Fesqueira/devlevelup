@@ -24,9 +24,8 @@ export function VoicesCarousel({
   testimonials,
   className,
 }: VoicesCarouselProps) {
-  const [activeIndex, setActiveIndex] = useState(() =>
-    Math.floor(testimonials.length / 2),
-  )
+  const [activeIndex, setActiveIndex] = useState(0)
+  const activeTestimonial = testimonials[activeIndex]
 
   const goTo = (index: number) => {
     setActiveIndex((index + testimonials.length) % testimonials.length)
@@ -34,32 +33,41 @@ export function VoicesCarousel({
 
   return (
     <div className={cn('flex flex-col items-center gap-6', className)}>
-      <div className="relative hidden h-[460px] w-full lg:block">
+      <div
+        className="relative hidden h-125 w-full lg:block"
+        role="region"
+        aria-roledescription="carrossel"
+        aria-label="Depoimentos da comunidade"
+      >
         {testimonials.map((testimonial, index) => {
           const span = Math.floor(testimonials.length / 2)
           let offset = activeIndex - index
           if (offset > span) offset -= testimonials.length
           if (offset < -span) offset += testimonials.length
+          const isActive = offset === 0
           return (
             <div
               key={testimonial.name}
+              inert={!isActive}
+              aria-hidden={!isActive}
               className={cn(
                 'absolute left-1/2 top-1/2 -translate-y-1/2 transition-all duration-500',
                 offsetClasses[offset],
               )}
             >
-              <TestimonialCard
-                testimonial={testimonial}
-                active={offset === 0}
-              />
+              <TestimonialCard testimonial={testimonial} active={isActive} />
             </div>
           )
         })}
       </div>
 
-      <div className="w-full max-w-90 lg:hidden">
-        <TestimonialCard testimonial={testimonials[activeIndex]} active />
+      <div className="w-full max-w-80 lg:hidden">
+        <TestimonialCard testimonial={activeTestimonial} active />
       </div>
+
+      <p className="sr-only" role="status">
+        {activeTestimonial.name}
+      </p>
 
       <div className="flex items-center gap-4">
         <button

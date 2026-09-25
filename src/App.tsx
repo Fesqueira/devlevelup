@@ -1,8 +1,10 @@
+import { ParallaxProvider } from 'react-scroll-parallax'
+import { usePrefersReducedMotion } from './hooks/usePrefersReducedMotion'
 import { Comparison } from './sections/Comparison'
 import { CTA } from './sections/CTA'
 import { Footer } from './sections/Footer'
 import { Header } from './sections/Header'
-import { Hero } from './sections/Hero'
+import { HeroParallax } from './sections/HeroParallax'
 import { Impact } from './sections/Impact'
 import { LevelUp } from './sections/LevelUp'
 import { PowerUp } from './sections/PowerUp'
@@ -11,34 +13,22 @@ import { Voices } from './sections/Voices'
 import { Reveal } from './components/ui/Reveal'
 
 export default function App() {
+  const prefersReducedMotion = usePrefersReducedMotion()
+
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      <Header />
-      <Reveal>
-        <Hero />
-      </Reveal>
-      <Reveal>
+    <ParallaxProvider isDisabled={prefersReducedMotion}>
+      <div className="min-h-screen overflow-x-hidden">
+        <Header />
+        <HeroParallax />
         <Comparison />
-      </Reveal>
-      <Reveal>
         <LevelUp />
-      </Reveal>
-      <Reveal>
         <CTA />
-      </Reveal>
-      <Reveal>
         <Squad />
-      </Reveal>
-      <Reveal>
         <Impact />
-      </Reveal>
-      <Reveal>
         <Voices />
-      </Reveal>
-      <Reveal>
         <PowerUp />
-      </Reveal>
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </ParallaxProvider>
   )
 }

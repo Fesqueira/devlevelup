@@ -1,19 +1,21 @@
 import { HeroActions } from '../components/hero/HeroActions'
-import { HeroBackground } from '../components/hero/HeroBackground'
 import { HeroDescription } from '../components/hero/HeroDescription'
 import { HeroEyebrow } from '../components/hero/HeroEyebrow'
-import { HeroScene } from '../components/hero/HeroScene'
+import { HeroParallaxBackground } from '../components/hero/HeroParallaxBackground'
 import { HeroStats } from '../components/hero/HeroStats'
 import { HeroTitle } from '../components/hero/HeroTitle'
 import { ArcadePanel } from '../components/ui/ArcadePanel'
 import { Reveal } from '../components/ui/Reveal'
+import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import { cn } from '../lib/utils'
 
-interface HeroProps {
+interface HeroParallaxProps {
   className?: string
 }
 
-export function Hero({ className }: HeroProps) {
+export function HeroParallax({ className }: HeroParallaxProps) {
+  const prefersReducedMotion = usePrefersReducedMotion()
+
   return (
     <Reveal>
       <section
@@ -23,8 +25,7 @@ export function Hero({ className }: HeroProps) {
           className,
         )}
       >
-        <HeroBackground />
-        <HeroScene />
+        <HeroParallaxBackground disabled={prefersReducedMotion} />
 
         <div className="relative flex w-full flex-col gap-6 lg:w-155">
           <ArcadePanel className="relative mx-4 flex flex-col gap-6 rounded-xl border bg-arcade-hud p-5 shadow-none backdrop-blur-none lg:mx-0 lg:rounded-2xl lg:bg-arcade-panel lg:p-8 lg:shadow-arcade-panel lg:backdrop-blur-[14px]">

@@ -1,5 +1,6 @@
 import { LevelUpPath } from '../components/levelup/LevelUpPath'
 import { Glow } from '../components/ui/Glow'
+import { Reveal } from '../components/ui/Reveal'
 import { SectionHeader } from '../components/ui/SectionHeader'
 import { levelUpCopy } from '../data/levelup'
 import { cn } from '../lib/utils'
@@ -10,35 +11,37 @@ interface LevelUpProps {
 
 export function LevelUp({ className }: LevelUpProps) {
   return (
-    <section
-      id="jornada"
-      className={cn(
-        'relative flex flex-col items-center gap-14 overflow-hidden bg-arcade-footer px-6 py-16 lg:px-20 lg:py-30',
-        className,
-      )}
-    >
-      <Glow className="-left-40 top-40 size-125" />
-      <Glow className="-right-40 top-64 size-125" />
-      <img
-        src="/images/grid-texture.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
-      />
+    <Reveal>
+      <section
+        id="jornada"
+        className={cn(
+          'relative flex flex-col items-center gap-14 overflow-hidden bg-arcade-footer px-6 py-16 lg:px-20 lg:py-30',
+          className,
+        )}
+      >
+        <Glow className="-left-40 top-40 size-125" />
+        <Glow className="-right-40 top-64 size-125" />
+        <img
+          src="/images/grid-texture.svg"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+        />
 
-      <SectionHeader
-        badge={levelUpCopy.badge}
-        subtitle={levelUpCopy.subtitle}
-        title={levelUpCopy.title}
-        description={levelUpCopy.description}
-      />
+        <SectionHeader
+          badge={levelUpCopy.badge}
+          subtitle={levelUpCopy.subtitle}
+          title={levelUpCopy.title}
+          description={levelUpCopy.description}
+        />
 
-      <LevelUpPath className="relative w-full" />
+        <LevelUpPath className="relative w-full" />
 
-      <div
-        aria-hidden="true"
-        className="absolute inset-x-0 bottom-0 h-1 bg-arcade-cyan opacity-40"
-      />
-    </section>
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 bottom-0 h-1 bg-arcade-cyan opacity-40"
+        />
+      </section>
+    </Reveal>
   )
 }

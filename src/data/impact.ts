@@ -11,19 +11,19 @@ export const impactCopy = {
     'Resultados reais de transformação social, técnica e profissional gerados pela comunidade.',
   stats: [
     {
-      value: '+500',
-      title: 'Membros ativos',
-      description: 'Juniores acelerados profissionalmente',
+      value: '+3',
+      title: 'Projetos em andamento',
+      description: 'Produtos reais sendo desenvolvidos de ponta a ponta',
     },
     {
-      value: '30+',
-      title: 'Projetos lançados',
-      description: 'Produtos reais criados de ponta a ponta',
+      value: '+35',
+      title: 'Mentores ativos',
+      description: 'Voluntários que fazem a diferença',
     },
     {
-      value: '100+',
+      value: '+50',
       title: 'Colocações de mercado',
-      description: 'Membros contratados por grandes empresas',
+      description: 'Juniores acelerados profissionalmente',
     },
   ],
 } as const
