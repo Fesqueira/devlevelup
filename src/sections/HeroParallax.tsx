@@ -21,7 +21,7 @@ export function HeroParallax({ className }: HeroParallaxProps) {
       <section
         id="inicio"
         className={cn(
-          'relative flex flex-col items-center gap-6 overflow-hidden bg-arcade-background py-16 lg:min-h-svh lg:flex-row lg:justify-start lg:px-20 lg:py-30',
+          'relative flex min-h-100 flex-col items-center gap-6 overflow-hidden bg-arcade-background py-16 lg:min-h-dvh lg:flex-row lg:justify-start lg:px-20 lg:py-30',
           className,
         )}
       >

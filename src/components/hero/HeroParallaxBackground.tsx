@@ -25,7 +25,7 @@ export function HeroParallaxBackground({
             <img
               src="/images/personagens-parallax/fundo.png"
               alt=""
-              className="h-full w-full object-contain"
+              className="h-full w-full object-cover object-top-right"
             />
           </picture>
         </ParallaxBannerLayer>
@@ -38,7 +38,7 @@ export function HeroParallaxBackground({
             <img
               src="/images/personagens-parallax/plano-frontal.png"
               alt=""
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-bottom-right"
             />
           </picture>
         </ParallaxBannerLayer>
