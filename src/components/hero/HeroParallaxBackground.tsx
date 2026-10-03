@@ -25,6 +25,8 @@ export function HeroParallaxBackground({
             <img
               src="/images/personagens-parallax/fundo.png"
               alt=""
+              fetchPriority="high"
+              decoding="async"
               className="h-full w-full object-cover object-top-right"
             />
           </picture>
