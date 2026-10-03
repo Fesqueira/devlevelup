@@ -12,9 +12,11 @@ export function ComparisonCta({ className }: ComparisonCtaProps) {
     <div className={cn('flex flex-col items-center gap-4', className)}>
       <div className="flex items-center gap-3 sm:gap-4">
         <Mascot
-          src="/images/mascote-apontando.png"
+          src="/images/mascote-apontando.webp"
           alt=""
           aria-hidden="true"
+          loading="lazy"
+          decoding="async"
           className="size-16 shrink-0 sm:size-20"
         />
         <a

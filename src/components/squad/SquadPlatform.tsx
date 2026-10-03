@@ -14,7 +14,7 @@ export function SquadPlatform({ roles, className }: SquadPlatformProps) {
     <div
       className={cn('relative h-56 w-full bg-cover bg-center', className)}
       style={{
-        backgroundImage: "url('/images/avatar-squad/pixel_plataform.png')",
+        backgroundImage: "url('/images/avatar-squad/pixel_plataform.webp')",
         imageRendering: 'pixelated',
       }}
     >
