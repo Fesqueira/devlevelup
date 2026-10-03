@@ -40,6 +40,8 @@ export function HeroParallaxBackground({
             <img
               src="/images/personagens-parallax/plano-frontal.png"
               alt=""
+              fetchPriority="high"
+              decoding="async"
               className="h-full w-full object-cover object-bottom-right"
             />
           </picture>
