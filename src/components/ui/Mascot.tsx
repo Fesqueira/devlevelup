@@ -9,7 +9,7 @@ interface MascotProps extends ImgHTMLAttributes<HTMLImageElement> {
 
 export function Mascot({
   className,
-  src = '/images/mascote-soujunior.png',
+  src = '/images/mascote-soujunior.webp',
   alt = 'Mascote SouJunior',
   glow = false,
   ...props

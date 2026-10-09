@@ -62,7 +62,12 @@ export function PowerUp({ className }: PowerUpProps) {
         </div>
 
         <div className="relative z-10 flex items-center gap-4">
-          <Mascot glow alt={powerUpCopy.cta.mascotAlt} />
+          <Mascot
+            glow
+            alt={powerUpCopy.cta.mascotAlt}
+            loading="lazy"
+            decoding="async"
+          />
           <a
             href={siteConfig.links.apoia}
             target="_blank"
