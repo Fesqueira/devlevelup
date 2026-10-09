@@ -22,7 +22,7 @@ export interface LevelUpCopy {
 export const levelUpCopy: LevelUpCopy = {
   badge: '⚡ LEVEL-UP SYSTEM',
   subtitle: '',
-  title: 'Todo mundo começa pequeno: A jornada de evolução',
+  title: 'Todo mundo começa pequeno:\nA jornada de evolução',
   description:
     'Cada nível desbloqueia novas habilidades, suporte e oportunidades na comunidade.',
   currentLabel: 'Nível Atual',

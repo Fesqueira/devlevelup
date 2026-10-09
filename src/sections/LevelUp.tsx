@@ -30,6 +30,7 @@ export function LevelUp({ className }: LevelUpProps) {
 
         <SectionHeader
           badge={levelUpCopy.badge}
+          className="whitespace-pre-line"
           subtitle={levelUpCopy.subtitle}
           title={levelUpCopy.title}
           description={levelUpCopy.description}
