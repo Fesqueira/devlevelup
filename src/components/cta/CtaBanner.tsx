@@ -24,8 +24,10 @@ export function CtaBanner({ className }: CtaBannerProps) {
 
       <div className="flex flex-none items-center justify-center gap-4 sm:gap-6">
         <Mascot
-          src="/images/mascote-apontando.png"
+          src="/images/mascote-apontando.webp"
           alt={ctaCopy.mascotAlt}
+          loading="lazy"
+          decoding="async"
           className="size-16 shrink-0 sm:size-20"
         />
         <a
