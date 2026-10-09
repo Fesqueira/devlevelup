@@ -14,6 +14,7 @@ export function Comparison({ className }: ComparisonProps) {
   return (
     <Reveal>
       <section
+        id="comparacao"
         className={cn(
           'relative flex flex-col items-center gap-14 overflow-hidden bg-arcade-footer px-6 py-16 lg:px-20 lg:py-30',
           className,
