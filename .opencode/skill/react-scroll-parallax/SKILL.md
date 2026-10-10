@@ -62,7 +62,7 @@ Wrapper `div` que aplica a config aos filhos:
 
 ```tsx
 <Parallax speed={-10}>
-  <img src="/images/personagens-parallax/qa.png" alt="" />
+  <img src="/images/hero/qa.png" alt="" />
 </Parallax>
 ```
 
@@ -74,9 +74,9 @@ Banner em camadas com overflow oculto — ideal para fundos de seção (Hero, Sq
 import { ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax'
 
 <ParallaxBanner className="h-[60vh]">
-  <ParallaxBannerLayer image="/images/personagens-parallax/fundo.png" speed={-20} />
+  <ParallaxBannerLayer image="/images/hero/fundo.png" speed={-20} />
   <ParallaxBannerLayer speed={-10}>
-    <img src="/images/personagens-parallax/qa.png" alt="QA" loading="lazy" />
+    <img src="/images/hero/qa.png" alt="QA" loading="lazy" />
   </ParallaxBannerLayer>
 </ParallaxBanner>
 ```
@@ -136,7 +136,7 @@ Progresso do efeito: **start** quando o topo do elemento entra pela base da view
 - `ParallaxProvider` uma única vez, em `App.tsx`.
 - Componentes com named export, `className?: string` e `cn()` (ver skill `componentes`).
 - Configs de efeito/constantes fora de `sections/` (react-refresh) → `src/data/`.
-- Imagens de parallax ficam em `public/images/personagens-parallax/`.
+- Imagens de parallax ficam em `public/images/hero/`.
 - Respeite `prefers-reduced-motion`: `isDisabled` no provider (ou `disabled` por elemento).
 - Tokens de cor/fonte do `@theme`; nada hardcoded (ver skill `tailwind-ui`).
 - `overflow-x-hidden` no wrapper do App evita scroll horizontal com `translateX`.
@@ -154,9 +154,9 @@ const { ref } = useParallax<HTMLDivElement>({
 ```tsx
 // banner em camadas com easing individual
 <ParallaxBanner className="h-[60vh]">
-  <ParallaxBannerLayer image="/images/personagens-parallax/fundo.png" speed={-20} />
+  <ParallaxBannerLayer image="/images/hero/fundo.png" speed={-20} />
   <ParallaxBannerLayer translateY={[-30, 30, 'easeInOut']}>
-    <img src="/images/personagens-parallax/desenvolvimento.png" alt="" loading="lazy" />
+    <img src="/images/hero/desenvolvimento.png" alt="" loading="lazy" />
   </ParallaxBannerLayer>
 </ParallaxBanner>
 ```

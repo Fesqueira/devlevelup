@@ -17,34 +17,22 @@ export function HeroParallaxBackground({
     >
       <ParallaxBanner className="h-full w-full" disabled={disabled}>
         <ParallaxBannerLayer speed={-30} easing="easeOut">
-          <picture className="block h-full w-full">
-            <source
-              srcSet="/images/personagens-parallax/fundo.webp"
-              type="image/webp"
-            />
-            <img
-              src="/images/personagens-parallax/fundo.png"
-              alt=""
-              fetchPriority="high"
-              decoding="async"
-              className="h-full w-full object-cover object-top-right"
-            />
-          </picture>
+          <img
+            src="/images/hero/fundo.webp"
+            alt=""
+            fetchPriority="high"
+            decoding="async"
+            className="h-full w-full object-cover object-top-right"
+          />
         </ParallaxBannerLayer>
         <ParallaxBannerLayer speed={-5} easing="easeOut">
-          <picture className="block h-full w-full">
-            <source
-              srcSet="/images/personagens-parallax/plano-frontal.webp"
-              type="image/webp"
-            />
-            <img
-              src="/images/personagens-parallax/plano-frontal.png"
-              alt=""
-              fetchPriority="high"
-              decoding="async"
-              className="h-full w-full object-cover object-bottom-right"
-            />
-          </picture>
+          <img
+            src="/images/hero/plano-frontal.webp"
+            alt=""
+            fetchPriority="high"
+            decoding="async"
+            className="h-full w-full object-cover object-bottom-right"
+          />
         </ParallaxBannerLayer>
       </ParallaxBanner>
       <div className="absolute inset-0 bg-arcade-scene-overlay lg:bg-hero-scrim" />

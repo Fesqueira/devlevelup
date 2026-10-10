@@ -14,7 +14,7 @@ export function HeroScene({ className }: HeroSceneProps) {
       )}
     >
       <img
-        src="/images/rpg-scene.png"
+        src="/images/hero/rpg_scene.webp"
         alt={heroCopy.sceneAlt}
         className="absolute inset-0 h-full w-full object-cover object-[75%_50%]"
         loading="eager"
