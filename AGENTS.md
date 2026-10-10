@@ -76,6 +76,20 @@ Mensagens em português, descritivas. Um commit = uma mudança coesa.
 - `release/*` e `hotfix/*` → PR para `main` (merge com **--no-ff** + tag semver) e volta para `develop`
 - Checklist no PR: QA ok no preview + `lint` + `format:check` + `build` verdes
 
+## Agentes (OpenCode)
+
+Squad em `.opencode/agent/`. Agentes `subagent` são acionados por delegação (`task`); `frontend` (mode `all`) também pode ser selecionado como agente principal.
+
+- `frontend` (`all`) — implementa a UI (React 19 + TS + Tailwind v4) seguindo `AGENTS.md`/`docs/`
+- `designer` (`subagent`) — traduz o Figma em specs (estrutura, tokens, props, estados) e audita aderência aos tokens `@theme`
+- `a11y` (`subagent`) — audita acessibilidade e responsividade (semântica, foco, contraste, ARIA, teclado)
+- `code-reviewer` (`subagent`) — revisa diffs contra `AGENTS.md` e `docs/`; nunca edita
+- `tech-lead` (`subagent`) — revisa arquitetura, TypeScript e React; nunca edita
+- `qa` (`subagent`) — veta/libera o PR no preview da Vercel; nunca edita
+- `release-manager` (`subagent`) — conduz o Gitflow: `release/vX.Y.Z` / `hotfix/*`, bump semver, PR, merge `--no-ff` e tag (sempre com autorização explícita)
+
+Fluxo: `frontend` + `designer` implementam → `a11y` + `code-reviewer` + `tech-lead` revisam → `qa` libera no preview → `release-manager` corta a release.
+
 ## Docs
 
 - `docs/arquitetura.md`, `docs/padrao-componentes.md`, `docs/git-branches.md` detalham as convenções

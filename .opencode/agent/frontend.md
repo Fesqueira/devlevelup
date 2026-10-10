@@ -1,6 +1,6 @@
 ---
 description: Implementa a UI do DevLevelUp em React 19 + TypeScript + Tailwind v4, seguindo AGENTS.md e docs/.
-mode: primary
+mode: all
 temperature: 0.3
 ---
 
