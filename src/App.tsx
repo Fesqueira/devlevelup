@@ -6,7 +6,7 @@ import { Comparison } from './sections/Comparison'
 import { CTA } from './sections/CTA'
 import { Footer } from './sections/Footer'
 import { Header } from './sections/Header'
-import { HeroParallax } from './sections/HeroParallax'
+import { Hero } from './sections/Hero'
 import { Impact } from './sections/Impact'
 import { PowerUp } from './sections/PowerUp'
 import { Voices } from './sections/Voices'
@@ -42,7 +42,7 @@ export default function App() {
     <ParallaxProvider isDisabled={prefersReducedMotion}>
       <div className="min-h-screen overflow-x-hidden">
         <Header />
-        <HeroParallax />
+        <Hero />
         <Comparison />
         <Suspense fallback={<SectionFallback id="jornada" />}>
           <LevelUp />
