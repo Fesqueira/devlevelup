@@ -58,7 +58,7 @@ export function ProgressWidget({
         className="h-4 w-full rounded-lg bg-arcade-powerup-track"
       >
         <div
-          className="h-full rounded-lg bg-gradient-to-r from-arcade-cyan to-arcade-purple-glow shadow-arcade-progress-fill transition-[width] duration-[1500ms] ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none"
+          className="h-full rounded-lg bg-linear-to-r from-arcade-cyan to-arcade-purple-glow shadow-arcade-progress-fill transition-[width] duration-1500 ease-in-out motion-reduce:transition-none"
           style={{ width: inView ? `${fillPercent}%` : '0%' }}
         />
       </div>

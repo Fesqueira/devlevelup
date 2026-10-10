@@ -11,7 +11,7 @@ export function HeroTitle({ className }: HeroTitleProps) {
     <h1
       className={cn(
         // clamp mantém as 2 linhas em qualquer tela: 72px = paddings do painel, 21 = chars da linha maior
-        'font-pixel text-[clamp(11px,calc((100vw_-_72px)/21),26px)] uppercase leading-[1.4] whitespace-nowrap text-arcade-footer-heading text-shadow-arcade-title',
+        'font-pixel text-[clamp(11px,calc((100vw-72px)/21),26px)] uppercase leading-[1.4] whitespace-nowrap text-arcade-footer-heading text-shadow-arcade-title',
         className,
       )}
     >

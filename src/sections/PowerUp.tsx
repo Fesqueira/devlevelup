@@ -44,10 +44,10 @@ export function PowerUp({ className }: PowerUpProps) {
 
         <ProgressWidget
           {...powerUpCopy.progress}
-          className="relative z-10 w-full max-w-320"
+          className="relative z-10 w-full max-w-7xl"
         />
 
-        <div className="relative z-10 flex w-full max-w-320 flex-col gap-6 lg:flex-row">
+        <div className="relative z-10 flex w-full max-w-7xl flex-col gap-6 lg:flex-row">
           {powerUpCopy.tiers.map((tier) => (
             <TierCard
               key={tier.name}

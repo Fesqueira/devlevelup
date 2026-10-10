@@ -9,14 +9,14 @@ export function HeroScene({ className }: HeroSceneProps) {
   return (
     <div
       className={cn(
-        'absolute inset-x-0 top-0 h-[60vh] min-h-[420px] overflow-hidden lg:hidden',
+        'absolute inset-x-0 top-0 h-[60vh] min-h-105 overflow-hidden lg:hidden',
         className,
       )}
     >
       <img
         src="/images/hero/rpg_scene.webp"
         alt={heroCopy.sceneAlt}
-        className="absolute inset-0 h-full w-full object-cover object-[75%_50%]"
+        className="absolute inset-0 h-full w-full object-cover object-right"
         loading="eager"
       />
       <div
