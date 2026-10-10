@@ -22,7 +22,7 @@ export const vozesCopy = {
       topic: 'CRESCIMENTO PESSOAL',
       quote:
         'A comunidade me deu a confiança que eu precisava. Participar de projetos reais mudou minha visão sobre o mercado e me preparou para os desafios do dia a dia.',
-      avatar: '/images/vozes/lucas.jpg',
+      avatar: '/images/vozes/lucas.webp',
     },
     {
       name: 'Ana S.',
@@ -32,7 +32,7 @@ export const vozesCopy = {
       topic: 'PRIMEIRA EXPERIÊNCIA',
       quote:
         'Entrar em uma squad me deu a experiência prática que os recrutadores cobram. Foi minha primeira oportunidade real de trabalho em equipe colaborativo.',
-      avatar: '/images/vozes/ana.jpg',
+      avatar: '/images/vozes/ana.webp',
     },
     {
       name: 'Marcus V.',
@@ -42,7 +42,7 @@ export const vozesCopy = {
       topic: 'IMPACTO EM MENTORIA',
       quote:
         'Mentorar a nova geração fortalece todo o mercado de tecnologia. A plataforma me deu o espaço certo para compartilhar conhecimento e acompanhar o crescimento de cada talento.',
-      avatar: '/images/vozes/marcus.jpg',
+      avatar: '/images/vozes/marcus.webp',
     },
     {
       name: 'Renata L.',
@@ -52,7 +52,7 @@ export const vozesCopy = {
       topic: 'TRANSIÇÃO DE CARREIRA',
       quote:
         'O apoio da comunidade foi essencial na minha transição de carreira. Encontrei mentores incríveis e projetos que me desafiaram a crescer profissionalmente.',
-      avatar: '/images/vozes/renata.jpg',
+      avatar: '/images/vozes/renata.webp',
     },
     {
       name: 'Juliana M.',
@@ -62,7 +62,7 @@ export const vozesCopy = {
       topic: 'COLABORAÇÃO REAL',
       quote:
         'Como designer, poder colaborar em produtos reais com times multidisciplinares acelerou meu aprendizado de forma incrível e ampliou meu portfólio.',
-      avatar: '/images/vozes/juliana.jpg',
+      avatar: '/images/vozes/juliana.webp',
     },
   ],
 } as const
