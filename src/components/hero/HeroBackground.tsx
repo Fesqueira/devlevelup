@@ -11,7 +11,7 @@ export function HeroBackground({ className }: HeroBackgroundProps) {
       className={cn('absolute inset-0 hidden lg:block', className)}
     >
       <img
-        src="/images/rpg-scene.png"
+        src="/images/hero/rpg_scene.webp"
         alt=""
         className="absolute inset-0 h-full w-full object-cover object-right"
         loading="eager"
