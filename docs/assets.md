@@ -28,7 +28,7 @@ Guia de exportação e nomenclatura de assets do DevLevelUp, conforme o handoff 
 | ------------------------ | ------------------------------------- |
 | `avatar-squad/`          | Sprites idle dos personagens (Squad)  |
 | `personagens/`           | Sprites dos níveis (LevelUp); `levelN/jornada-0X-*-idle-N.png` = frames de idle por nível |
-| `vozes/`                 | Fotos dos depoimentos (Voices)        |
+| `vozes/`                 | Fotos dos depoimentos (Voices), `.webp` 128×128 |
 | `grid-texture.svg`       | Textura de fundo (Comparison/LevelUp) |
 | `mascote-soujunior.png`  | Mascote (Header/PowerUp)              |
 | `mascote-apontando.png`  | Mascote apontando (CTA)               |
