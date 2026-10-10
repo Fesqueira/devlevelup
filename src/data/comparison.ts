@@ -65,6 +65,6 @@ export const comparisonCopy = {
       },
     ],
   },
-  cta: '⚡ Transforme talentos por R$ 2,00/mês',
+  cta: '⚡ Comece a transformar talentos por R$ 2,00/mês',
   ctaSubtext: 'Cancele quando quiser · Transparência total via Apoia.se',
 } as const

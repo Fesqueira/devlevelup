@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 import type { Testimonial } from '../../data/vozes'
 import { cn } from '../../lib/utils'
+import { ArrowLeftIcon, ArrowRightIcon } from '../ui/icons'
 import { TestimonialCard } from './TestimonialCard'
 
 interface VoicesCarouselProps {
@@ -10,15 +10,12 @@ interface VoicesCarouselProps {
 }
 
 const offsetClasses: Record<number, string> = {
-  0: 'z-30 -translate-x-1/2 scale-[1.05] opacity-100',
-  1: 'z-20 translate-x-[calc(-50%-280px)] scale-90 opacity-70',
-  '-1': 'z-20 translate-x-[calc(-50%+280px)] scale-90 opacity-70',
-  2: 'z-10 translate-x-[calc(-50%-530px)] scale-[0.82] opacity-35',
-  '-2': 'z-10 translate-x-[calc(-50%+530px)] scale-[0.82] opacity-35',
+  0: 'z-30 -translate-x-1/2 scale-100 opacity-100',
+  1: 'z-20 -translate-x-[150%] scale-90 opacity-65',
+  '-1': 'z-20 translate-x-[50%] scale-90 opacity-65',
+  2: 'z-10 -translate-x-[250%] scale-80 opacity-40',
+  '-2': 'z-10 translate-x-[150%] scale-80 opacity-40',
 }
-
-const controlClasses =
-  'flex size-11 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/70 transition-colors hover:border-arcade-voice-cyan hover:text-arcade-voice-cyan focus-visible:ring-2 focus-visible:ring-arcade-voice-cyan'
 
 export function VoicesCarousel({
   testimonials,
@@ -74,9 +71,9 @@ export function VoicesCarousel({
           type="button"
           onClick={() => goTo(activeIndex - 1)}
           aria-label="Depoimento anterior"
-          className={controlClasses}
+          className="flex size-12 items-center justify-center rounded-full border border-arcade-nav-border bg-arcade-navbar text-arcade-nav-muted transition-colors hover:border-arcade-cyan hover:text-arcade-cyan"
         >
-          <ChevronLeft className="size-5" aria-hidden="true" />
+          <ArrowLeftIcon className="size-5" />
         </button>
 
         <div className="flex items-center gap-2">
@@ -88,10 +85,10 @@ export function VoicesCarousel({
               aria-label={`Ir para depoimento de ${testimonial.name}`}
               aria-current={index === activeIndex}
               className={cn(
-                'h-2 rounded-full transition-all duration-300 focus-visible:ring-2 focus-visible:ring-arcade-voice-cyan',
+                'h-2 rounded-full transition-all',
                 index === activeIndex
-                  ? 'w-6 bg-arcade-voice-cyan'
-                  : 'w-2 bg-white/25 hover:bg-white/40',
+                  ? 'w-6 bg-arcade-cyan'
+                  : 'w-2 bg-arcade-nav-border',
               )}
             />
           ))}
@@ -101,9 +98,9 @@ export function VoicesCarousel({
           type="button"
           onClick={() => goTo(activeIndex + 1)}
           aria-label="Próximo depoimento"
-          className={controlClasses}
+          className="flex size-12 items-center justify-center rounded-full border border-arcade-nav-border bg-arcade-navbar text-arcade-cyan transition-colors hover:border-arcade-cyan"
         >
-          <ChevronRight className="size-5" aria-hidden="true" />
+          <ArrowRightIcon className="size-5" />
         </button>
       </div>
     </div>

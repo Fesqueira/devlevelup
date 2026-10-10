@@ -65,22 +65,6 @@ export function Header({ className }: HeaderProps) {
     requestAnimationFrame(() => handleNavClick(href))
   }
 
-  const sectionIds = useMemo(
-    () => navLinks.map((link) => link.href.slice(1)),
-    [],
-  )
-  const activeSection = useActiveSection(sectionIds)
-
-  const handleMobileNavClick = (href: string) => {
-    setMenuOpen(false)
-    if (!href.startsWith('#')) return
-
-    const id = href.slice(1)
-    requestAnimationFrame(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-    })
-  }
-
   return (
     <header
       className={cn(

@@ -46,6 +46,8 @@ export function SquadAvatar({ frames, alt, className }: SquadAvatarProps) {
       <img
         src={frames[0]}
         alt={alt}
+        loading="lazy"
+        decoding="async"
         className={cn('object-contain', className)}
       />
     )
@@ -63,6 +65,8 @@ export function SquadAvatar({ frames, alt, className }: SquadAvatarProps) {
             src={frame}
             alt={index === 0 ? alt : ''}
             aria-hidden={index !== 0}
+            loading="lazy"
+            decoding="async"
             initial={false}
             animate={{ opacity: values }}
             transition={{

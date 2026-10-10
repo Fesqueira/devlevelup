@@ -10,11 +10,13 @@ interface ComparisonCtaProps {
 export function ComparisonCta({ className }: ComparisonCtaProps) {
   return (
     <div className={cn('flex flex-col items-center gap-4', className)}>
-      <div className="flex items-center gap-3 sm:gap-4">
+      <div className="flex flex-col items-center gap-3 sm:gap-4">
         <Mascot
-          src="/images/mascote-apontando.png"
+          src="/images/mascote-apontando.webp"
           alt=""
           aria-hidden="true"
+          loading="lazy"
+          decoding="async"
           className="size-16 shrink-0 sm:size-20"
         />
         <a
@@ -25,10 +27,10 @@ export function ComparisonCta({ className }: ComparisonCtaProps) {
         >
           {comparisonCopy.cta}
         </a>
+        <p className="text-center font-sans text-xs font-semibold leading-4 text-arcade-footer-text">
+          {comparisonCopy.ctaSubtext}
+        </p>
       </div>
-      <p className="text-center font-sans text-xs font-semibold leading-4 text-arcade-footer-text">
-        {comparisonCopy.ctaSubtext}
-      </p>
     </div>
   )
 }

@@ -1,4 +1,6 @@
+import { lazy, Suspense, useEffect } from 'react'
 import { ParallaxProvider } from 'react-scroll-parallax'
+import { SectionFallback } from './components/ui/SectionFallback'
 import { usePrefersReducedMotion } from './hooks/usePrefersReducedMotion'
 import { Comparison } from './sections/Comparison'
 import { CTA } from './sections/CTA'
@@ -6,14 +8,35 @@ import { Footer } from './sections/Footer'
 import { Header } from './sections/Header'
 import { HeroParallax } from './sections/HeroParallax'
 import { Impact } from './sections/Impact'
-import { LevelUp } from './sections/LevelUp'
 import { PowerUp } from './sections/PowerUp'
-import { Squad } from './sections/Squad'
 import { Voices } from './sections/Voices'
-import { Reveal } from './components/ui/Reveal'
+
+// LevelUp e Squad são as únicas seções que usam framer-motion e ficam abaixo
+// da dobra: carregá-las sob demanda tira a lib do bundle inicial.
+const loadLevelUp = () =>
+  import('./sections/LevelUp').then((m) => ({ default: m.LevelUp }))
+const loadSquad = () =>
+  import('./sections/Squad').then((m) => ({ default: m.Squad }))
+
+const LevelUp = lazy(loadLevelUp)
+const Squad = lazy(loadSquad)
+
+function preloadLazySections() {
+  void loadLevelUp()
+  void loadSquad()
+}
 
 export default function App() {
   const prefersReducedMotion = usePrefersReducedMotion()
+
+  useEffect(() => {
+    if (typeof window.requestIdleCallback === 'function') {
+      const id = window.requestIdleCallback(preloadLazySections)
+      return () => window.cancelIdleCallback(id)
+    }
+    const id = window.setTimeout(preloadLazySections, 2000)
+    return () => window.clearTimeout(id)
+  }, [])
 
   return (
     <ParallaxProvider isDisabled={prefersReducedMotion}>
@@ -21,9 +44,13 @@ export default function App() {
         <Header />
         <HeroParallax />
         <Comparison />
-        <LevelUp />
+        <Suspense fallback={<SectionFallback id="jornada" />}>
+          <LevelUp />
+        </Suspense>
         <CTA />
-        <Squad />
+        <Suspense fallback={<SectionFallback id="squads" />}>
+          <Squad />
+        </Suspense>
         <Impact />
         <Voices />
         <PowerUp />

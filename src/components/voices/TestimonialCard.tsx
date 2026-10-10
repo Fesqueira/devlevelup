@@ -1,5 +1,4 @@
-import { Quote } from 'lucide-react'
-import type { Testimonial, VoiceColor } from '../../data/vozes'
+import type { Testimonial } from '../../data/vozes'
 import { cn } from '../../lib/utils'
 
 interface TestimonialCardProps {
@@ -8,50 +7,11 @@ interface TestimonialCardProps {
   className?: string
 }
 
-const colorClasses: Record<
-  VoiceColor,
-  { text: string; border: string; bg: string; accent: string }
-> = {
-  pink: {
-    text: 'text-arcade-voice-pink',
-    border: 'border-arcade-voice-pink/25',
-    bg: 'bg-arcade-voice-pink/15',
-    accent: 'bg-arcade-voice-pink',
-  },
-  blue: {
-    text: 'text-arcade-voice-blue',
-    border: 'border-arcade-voice-blue/25',
-    bg: 'bg-arcade-voice-blue/15',
-    accent: 'bg-arcade-voice-blue',
-  },
-  cyan: {
-    text: 'text-arcade-voice-cyan',
-    border: 'border-arcade-voice-cyan/25',
-    bg: 'bg-arcade-voice-cyan/15',
-    accent: 'bg-arcade-voice-cyan',
-  },
-  purple: {
-    text: 'text-arcade-voice-purple',
-    border: 'border-arcade-voice-purple/25',
-    bg: 'bg-arcade-voice-purple/15',
-    accent: 'bg-arcade-voice-purple',
-  },
-  teal: {
-    text: 'text-arcade-voice-teal',
-    border: 'border-arcade-voice-teal/25',
-    bg: 'bg-arcade-voice-teal/15',
-    accent: 'bg-arcade-voice-teal',
-  },
-}
-
 export function TestimonialCard({
   testimonial,
   active = false,
   className,
 }: TestimonialCardProps) {
-  const color = colorClasses[testimonial.color]
-  const initial = testimonial.name.charAt(0)
-
   return (
     <article
       className={cn(
@@ -95,21 +55,20 @@ export function TestimonialCard({
           </p>
           <span className="rounded-full border border-arcade-cyan-badge-border bg-arcade-cyan-badge px-2.5 py-0.5 font-sora text-[11px] font-bold uppercase leading-3.5 text-arcade-cyan">
             {testimonial.role}
-          </p>
-          <p className="truncate font-roboto-flex text-[11px] leading-4 text-arcade-nav-muted">
-            {testimonial.affiliation}
+          </span>
+          <p className="font-roboto-flex text-[11px] leading-3.5 text-arcade-nav-muted">
+            {testimonial.membership}
           </p>
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-2">
-        {testimonial.tags.map((tag) => (
+      <div className="flex flex-wrap gap-x-2 gap-y-1">
+        {testimonial.badges.map((badge) => (
           <span
             key={badge}
             className="rounded-full border border-arcade-purple-glow bg-arcade-footer px-2.5 py-1 font-sora text-[10px] font-bold leading-3.5 text-arcade-purple-glow"
           >
-            <tag.icon className="size-3" aria-hidden="true" />
-            {tag.label}
+            {badge}
           </span>
         ))}
       </div>
