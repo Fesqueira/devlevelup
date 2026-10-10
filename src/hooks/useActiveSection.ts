@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-
-const HEADER_OFFSET = 96
+import { HEADER_OFFSET } from '../lib/scroll'
 
 export function useActiveSection(ids: string[]) {
   const [activeId, setActiveId] = useState<string | null>(null)
