@@ -2,7 +2,7 @@ export interface SquadRole {
   label: string
   name: string
   accent: string
-  frames: readonly string[]
+  image: string
   skills: readonly string[]
   position: { x: number; y: number }
 }
@@ -18,55 +18,40 @@ export const squadCopy = {
       label: 'PRODUCT MANAGER',
       name: 'Product Manager',
       accent: 'var(--color-arcade-role-pm)',
-      position: { x: 18, y: 60 },
+      position: { x: 18, y: 66 },
       skills: [
         'Define roadmap e prioridades',
         'Gestão de backlog ágil',
         'Comunicação com stakeholders',
         'Facilita cerimônias Scrum',
       ],
-      frames: [
-        '/images/avatar-squad/product_manager/squad-pm-idle 1.webp',
-        '/images/avatar-squad/product_manager/squad-pm-idle 1-1.webp',
-        '/images/avatar-squad/product_manager/squad-pm-idle 1-2.webp',
-        '/images/avatar-squad/product_manager/squad-pm-idle 1-3.webp',
-      ],
+      image: '/images/avatar-squad/product_manager/squad-pm-idle 1.webp',
     },
     {
       label: 'UX/UI DESIGNER',
       name: 'UX/UI Designer',
       accent: 'var(--color-arcade-role-ux)',
-      position: { x: 40, y: 50 },
+      position: { x: 40, y: 54 },
       skills: [
         'Pesquisa com usuários',
         'Wireframes e protótipos',
         'Design system unificado',
         'Handoff para devs',
       ],
-      frames: [
-        '/images/avatar-squad/ux_ui_designer/squad-ux-ui-idle 1.webp',
-        '/images/avatar-squad/ux_ui_designer/squad-ux-ui-idle 1-1.webp',
-        '/images/avatar-squad/ux_ui_designer/squad-ux-ui-idle 1-2.webp',
-        '/images/avatar-squad/ux_ui_designer/squad-ux-ui-idle 1-3.webp',
-      ],
+      image: '/images/avatar-squad/ux_ui_designer/squad-ux-ui-idle 1.webp',
     },
     {
       label: 'DEVELOPER',
       name: 'Developer',
       accent: 'var(--color-arcade-role-dev)',
-      position: { x: 61, y: 40 },
+      position: { x: 61, y: 42 },
       skills: [
         'Frontend e Backend',
         'Code review em equipe',
         'Testes automatizados',
         'Deploy e CI/CD',
       ],
-      frames: [
-        '/images/avatar-squad/developer/squad-dev-idle 1.webp',
-        '/images/avatar-squad/developer/squad-dev-idle 1-1.webp',
-        '/images/avatar-squad/developer/squad-dev-idle 1-2.webp',
-        '/images/avatar-squad/developer/squad-dev-idle 1-3.webp',
-      ],
+      image: '/images/avatar-squad/developer/squad-dev-idle 1.webp',
     },
     {
       label: 'QA ENGINEER',
@@ -79,12 +64,7 @@ export const squadCopy = {
         'Report e priorização de bugs',
         'Homologação final',
       ],
-      frames: [
-        '/images/avatar-squad/qa/squad-qa-idle 1.webp',
-        '/images/avatar-squad/qa/squad-qa-idle 1-1.webp',
-        '/images/avatar-squad/qa/squad-qa-idle 1-2.webp',
-        '/images/avatar-squad/qa/squad-qa-idle 1-3.webp',
-      ],
+      image: '/images/avatar-squad/qa/squad-qa-idle 1.webp',
     },
   ],
 } as const

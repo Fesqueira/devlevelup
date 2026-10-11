@@ -45,7 +45,7 @@ export function SquadCard({ role, floatDelay = 0, className }: SquadCardProps) {
           style={{ animationDelay: `${floatDelay}s` }}
         >
           <SquadAvatar
-            frames={role.frames}
+            src={role.image}
             alt={role.name}
             className="size-28 sm:size-40"
           />
