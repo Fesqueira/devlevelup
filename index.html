@@ -63,9 +63,70 @@
       type="image/webp"
       fetchpriority="high"
     />
+    <style>
+      .boot-screen {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.25rem;
+        background:
+          radial-gradient(
+            circle at 50% 42%,
+            rgba(0, 240, 255, 0.14),
+            transparent 62%
+          ),
+          #05050d;
+        font-family: 'Press Start 2P', 'Courier New', monospace;
+      }
+      .boot-spinner {
+        width: 3.5rem;
+        height: 3.5rem;
+        color: #00f0ff;
+        animation: boot-spin 1s steps(8) infinite;
+      }
+      .boot-label {
+        margin: 0;
+        color: #ececf6;
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+      }
+      @keyframes boot-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .boot-spinner {
+          animation: none;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="boot-screen" role="status" aria-live="polite">
+        <svg
+          class="boot-spinner"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          <rect x="10" y="0" width="4" height="4" opacity="0.95" />
+          <rect x="17" y="3" width="4" height="4" opacity="0.8" />
+          <rect x="20" y="10" width="4" height="4" opacity="0.65" />
+          <rect x="17" y="17" width="4" height="4" opacity="0.5" />
+          <rect x="10" y="20" width="4" height="4" opacity="0.35" />
+          <rect x="3" y="17" width="4" height="4" opacity="0.22" />
+          <rect x="0" y="10" width="4" height="4" opacity="0.14" />
+          <rect x="3" y="3" width="4" height="4" opacity="0.08" />
+        </svg>
+        <p class="boot-label">CARREGANDO…</p>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

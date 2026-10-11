@@ -364,3 +364,68 @@ export function ExternalLinkIcon({ className }: IconProps) {
     </svg>
   )
 }
+
+export function PixelSpinnerIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="10" y="0" width="4" height="4" opacity="0.95" />
+      <rect x="17" y="3" width="4" height="4" opacity="0.8" />
+      <rect x="20" y="10" width="4" height="4" opacity="0.65" />
+      <rect x="17" y="17" width="4" height="4" opacity="0.5" />
+      <rect x="10" y="20" width="4" height="4" opacity="0.35" />
+      <rect x="3" y="17" width="4" height="4" opacity="0.22" />
+      <rect x="0" y="10" width="4" height="4" opacity="0.14" />
+      <rect x="3" y="3" width="4" height="4" opacity="0.08" />
+    </svg>
+  )
+}
+
+export function GhostIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+      aria-hidden="true"
+    >
+      <path
+        d="M12 3a7 7 0 0 0-7 7v11l2.5-2 2.5 2 2-2 2 2 2.5-2 2.5 2V10a7 7 0 0 0-7-7Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+      <circle cx="9.5" cy="11" r="1.3" fill="currentColor" />
+      <circle cx="14.5" cy="11" r="1.3" fill="currentColor" />
+    </svg>
+  )
+}
+
+export function AlertIcon({ className }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+      aria-hidden="true"
+    >
+      <path
+        d="M12 3 2.5 20.5h19L12 3Z"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12 10v4.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+      <circle cx="12" cy="17.4" r="1.1" fill="currentColor" />
+    </svg>
+  )
+}
