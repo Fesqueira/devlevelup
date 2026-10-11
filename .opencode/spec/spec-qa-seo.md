@@ -271,8 +271,8 @@ A URL de produção é **fixa e permanente**: `https://devlevelup-puce.vercel.ap
 
 - `.github/workflows/lighthouse.yml` (workflow separado, **não-bloqueante**):
   - Roda em `pull_request` e push em `main`/`develop`/`release/**`/`hotfix/**` (mesmos gatilhos do `ci.yml`).
-  - `npm ci` → `npm run build` → `npx --yes @lhci/cli@0.14.0 autorun` (Lighthouse CI **sobre o `dist`**, sem depender de URL de preview, sem dependência nova no `package.json`).
-  - `lighthouserc.json`: `collect.staticDistDir: ./dist`; asserções **WARN** (`performance ≥ 0.8`, `accessibility/best-practices/seo ≥ 0.9` — não quebram o build); upload em `filesystem` + artefato `lighthouse-report`.
+  - `npm ci` → `npm run build` → `npx --yes @lhci/cli@0.14.0 autorun` (Lighthouse CI **sobre o `vite preview`** em `localhost:4173`, sem depender de URL de preview, sem dependência nova no `package.json`).
+  - `lighthouserc.json`: `collect.startServerCommand` = `npm run preview -- --port 4173 --strictPort` + `collect.url` = `http://localhost:4173/` (audita só a LP, não o `404.html`); asserções **WARN** (`performance ≥ 0.8`, `accessibility/best-practices/seo ≥ 0.9` — não quebram o build); upload em `filesystem` + artefato `lighthouse-report`.
 
 ### Critérios de aceite
 
@@ -369,6 +369,6 @@ QA manual pendente no preview Vercel (checklist no PR):
 | Versão semver | `1.0.0` (primeira release; sync com tag `v1.0.0` no fluxo `release/*`; nunca mais `0.0.0`) |
 | `name` do package.json | Mantido `devlevelup` (`private: true`) — nome não bloqueia nada |
 | Licença | **MIT** — `Copyright (c) 2026 Equipe DevLevelUp — SouJunior` |
-| Lighthouse CI | `npx @lhci/cli` sobre `dist`, job separado **não-bloqueante** com asserções WARN + artefato (sem dep. nova) |
+| Lighthouse CI | `npx @lhci/cli` sobre `vite preview` (raiz `/`), job separado **não-bloqueante** com asserções WARN + artefato (sem dep. nova) |
 | Dependabot | `target-branch: develop`, semanal, grupo `minor-patch`, limite 3 PRs |
 | 404 | `public/404.html` estático auto-contido (SPA de rota única; roteador só se for adicionado no futuro) |
