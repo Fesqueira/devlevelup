@@ -50,7 +50,7 @@ export function FooterSocial({ className }: FooterSocialProps) {
         href={siteConfig.links.apoia}
         target="_blank"
         rel="noreferrer"
-        className="hidden h-10 w-fit items-center rounded-lg bg-arcade-cyan px-3 font-sans text-sm font-semibold text-arcade-950 shadow-arcade-badge transition-colors hover:bg-arcade-secondary md:inline-flex md:px-5 md:py-2.5"
+        className="hidden h-10 w-fit items-center rounded-lg bg-arcade-cyan px-3 font-sans text-sm font-semibold text-arcade-on-accent shadow-arcade-badge transition-colors hover:bg-arcade-secondary md:inline-flex md:px-5 md:py-2.5"
       >
         {footerCopy.ctaLabel}
         <ArrowRightIcon className="size-3.5" />

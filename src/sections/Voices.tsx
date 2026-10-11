@@ -35,7 +35,7 @@ export function Voices({ className }: VoicesProps) {
 
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 h-6 bg-arcade-950"
+          className="absolute inset-x-0 bottom-0 h-6 bg-arcade-background"
         />
       </section>
     </Reveal>

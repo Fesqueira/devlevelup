@@ -3,6 +3,7 @@ import { CloseIcon, MenuIcon } from '../ui/icons'
 import { Mascot } from '../ui/Mascot'
 import { cn } from '../../lib/utils'
 import { SupportLink } from './SupportLink'
+import { ThemeToggle } from './ThemeToggle'
 
 interface HeaderActionsProps {
   menuOpen: boolean
@@ -21,6 +22,7 @@ export function HeaderActions({
     <div className={cn('flex items-center gap-3', className)}>
       <Mascot loading="eager" className="hidden sm:block" />
       <SupportLink variant="desktop" />
+      <ThemeToggle />
       <button
         ref={toggleRef}
         type="button"
@@ -28,7 +30,7 @@ export function HeaderActions({
         aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
         aria-expanded={menuOpen}
         aria-controls="menu-mobile"
-        className="flex h-10 w-10 items-center justify-center rounded-lg text-arcade-ghost transition-colors hover:text-arcade-cyan md:hidden"
+        className="flex h-10 w-10 items-center justify-center rounded-lg text-arcade-ghost transition-colors hover:text-arcade-cyan focus-visible:ring-2 focus-visible:ring-arcade-cyan focus-visible:ring-offset-2 focus-visible:ring-offset-arcade-background focus-visible:outline-none md:hidden"
       >
         {menuOpen ? (
           <CloseIcon className="h-6 w-6" />

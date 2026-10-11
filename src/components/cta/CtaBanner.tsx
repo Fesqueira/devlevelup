@@ -28,7 +28,7 @@ export function CtaBanner({ className }: CtaBannerProps) {
             filter: 'blur(9px)',
           }}
         />
-        <div className="relative z-10 box-border flex w-full max-w-328 flex-col items-center gap-6 rounded-2xl border border-white/8 bg-white/3 px-6 py-6 lg:h-32 lg:flex-row lg:justify-between lg:gap-12 lg:px-10">
+        <div className="relative z-10 box-border flex w-full max-w-328 flex-col items-center gap-6 rounded-2xl border border-arcade-white/8 bg-arcade-white/3 px-6 py-6 lg:h-32 lg:flex-row lg:justify-between lg:gap-12 lg:px-10">
           <h2 className="max-w-160 font-display text-xl font-semibold leading-7 text-arcade-white sm:text-[20px]">
             {ctaCopy.titleBefore}{' '}
             <span className="text-arcade-cyan">{ctaCopy.titleHighlight}</span>{' '}
@@ -45,7 +45,7 @@ export function CtaBanner({ className }: CtaBannerProps) {
               href={siteConfig.links.apoia}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex h-12 w-61 items-center justify-center rounded-lg bg-arcade-cyan px-6 py-3.5 font-sans text-base font-bold leading-5 text-arcade-950 shadow-arcade-cta-cyan-lg transition-colors hover:bg-arcade-secondary"
+              className="inline-flex h-12 w-61 items-center justify-center rounded-lg bg-arcade-cyan px-6 py-3.5 font-sans text-base font-bold leading-5 text-arcade-on-accent shadow-arcade-cta-cyan-lg transition-colors hover:bg-arcade-secondary"
             >
               {ctaCopy.buttonLabel}
             </a>

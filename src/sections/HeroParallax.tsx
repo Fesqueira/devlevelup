@@ -20,6 +20,7 @@ export function HeroParallax({ className }: HeroParallaxProps) {
     <Reveal>
       <section
         id="inicio"
+        data-theme="dark"
         className={cn(
           'relative flex min-h-100 flex-col items-center gap-6 overflow-hidden bg-arcade-background py-16 lg:min-h-dvh lg:flex-row lg:justify-start lg:px-20 lg:py-30',
           className,
