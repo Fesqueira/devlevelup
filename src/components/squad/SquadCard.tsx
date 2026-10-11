@@ -44,11 +44,7 @@ export function SquadCard({ role, floatDelay = 0, className }: SquadCardProps) {
           className="animate-sprite-float drop-shadow-arcade-sprite transition-[filter] duration-200 ease-out group-hover:drop-shadow-[0_0_18px_color-mix(in_srgb,var(--squad-accent)_53%,transparent)] group-focus-visible:drop-shadow-[0_0_18px_color-mix(in_srgb,var(--squad-accent)_53%,transparent)] motion-reduce:animate-none"
           style={{ animationDelay: `${floatDelay}s` }}
         >
-          <SquadAvatar
-            src={role.image}
-            alt={role.name}
-            className="size-28 sm:size-40"
-          />
+          <SquadAvatar src={role.image} alt={role.name} className="size-40" />
         </div>
         <div
           aria-hidden="true"

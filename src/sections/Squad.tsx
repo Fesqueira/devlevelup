@@ -36,7 +36,7 @@ export function Squad({ className }: SquadProps) {
           className="relative z-10"
         />
 
-        <div className="relative z-10 mt-24 flex w-full max-w-300 flex-col items-center">
+        <div className="relative z-10 mt-24 flex w-full flex-col items-center">
           <SquadPlatform roles={squadCopy.roles} className="z-10" />
         </div>
 
