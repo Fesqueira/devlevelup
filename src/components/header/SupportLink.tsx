@@ -10,7 +10,7 @@ interface SupportLinkProps {
 }
 
 const base =
-  'h-10 items-center rounded-lg bg-arcade-cyan font-sans text-sm font-semibold text-arcade-950 shadow-arcade-badge transition-colors hover:bg-arcade-secondary'
+  'h-10 items-center rounded-lg bg-arcade-cyan font-sans text-sm font-semibold text-arcade-on-accent shadow-arcade-badge transition-colors hover:bg-arcade-secondary'
 
 const variants: Record<
   SupportLinkVariant,

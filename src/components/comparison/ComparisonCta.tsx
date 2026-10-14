@@ -24,7 +24,7 @@ export function ComparisonCta({ className }: ComparisonCtaProps) {
             href={siteConfig.links.apoia}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-12 max-w-full items-center justify-center rounded-lg bg-arcade-cyan px-4 text-center font-sans text-sm font-bold leading-5 text-arcade-footer shadow-arcade-cta-cyan-lg transition-colors hover:bg-arcade-secondary sm:px-6"
+            className="inline-flex h-12 max-w-full items-center justify-center rounded-lg bg-arcade-cyan px-4 text-center font-sans text-sm font-bold leading-5 text-arcade-on-accent shadow-arcade-cta-cyan-lg transition-colors hover:bg-arcade-secondary sm:px-6"
           >
             {comparisonCopy.cta}
           </a>

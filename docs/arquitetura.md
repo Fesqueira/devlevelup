@@ -66,3 +66,11 @@ src/
 | Vercel          | preview por PR + deploy de `main`    |
 
 Mais detalhes de fluxo Git em `docs/git-branches.md`.
+
+## Tema (claro/escuro)
+
+- O tema ativo fica em `document.documentElement.dataset.theme` (`"dark"` default ou `"light"`).
+- `src/hooks/useTheme.ts` lê/persiste em `localStorage["devlevelup-theme"]`; `src/components/header/ThemeToggle.tsx` alterna.
+- Os valores escuros ficam no `@theme` (default); o tema claro é uma **sobreposição de tokens** em `:root[data-theme='light']`.
+- Para manter uma área escura no tema claro, marque o container com `data-theme="dark"` (ver `src/sections/Hero.tsx`).
+- Texto sobre fundos de accent usa `--color-arcade-on-accent` (nunca `arcade-950` direto nesses casos).

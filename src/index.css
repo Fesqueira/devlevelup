@@ -45,6 +45,7 @@
   --color-arcade-divider: #1e3a5f;
   --color-arcade-level: #0d1a3e;
   --color-arcade-white: #ffffff;
+  --color-arcade-on-accent: #0b0f1d;
   --color-arcade-scene-overlay: rgba(6, 11, 31, 0.15);
   --color-arcade-footer: #090d16;
   --color-arcade-footer-heading: #f8fafc;
@@ -140,6 +141,97 @@
   --text-shadow-arcade-impact: 0 0 12px rgba(0, 240, 255, 0.4);
   --text-shadow-arcade-powerup: 0 0 18px rgba(0, 240, 255, 0.4);
 }
+
+:root {
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --color-arcade-background: #f3f5fb;
+  --color-arcade-900: #ffffff;
+  --color-arcade-800: #e4e8f3;
+  --color-arcade-700: #d3d9e8;
+
+  --color-arcade-white: #0b0f1d;
+  --color-arcade-on-accent: #ffffff;
+  --color-arcade-ghost: #1f2a44;
+  --color-arcade-muted: #5b6478;
+  --color-arcade-text-secondary: #475569;
+  --color-arcade-comparison-bullet: #334155;
+
+  --color-arcade-navbar: rgba(255, 255, 255, 0.85);
+  --color-arcade-nav-muted: #475569;
+  --color-arcade-nav-border: rgba(15, 23, 42, 0.1);
+
+  --color-arcade-panel: rgba(255, 255, 255, 0.7);
+  --color-arcade-hud: rgba(255, 255, 255, 0.65);
+  --color-arcade-stats-bar: rgba(255, 255, 255, 0.6);
+  --color-arcade-tooltip: rgba(255, 255, 255, 0.95);
+  --color-arcade-level-frame: rgba(255, 255, 255, 0.7);
+  --color-arcade-card-border: rgba(15, 23, 42, 0.08);
+  --color-arcade-icon-border: rgba(15, 23, 42, 0.15);
+
+  --color-arcade-comparison-card: rgba(255, 255, 255, 0.7);
+  --color-arcade-comparison-card-active: rgba(255, 255, 255, 0.95);
+  --color-arcade-impact-card: #ffffff;
+  --color-arcade-powerup-card: rgba(15, 23, 42, 0.03);
+  --color-arcade-powerup-track: #e2e8f0;
+
+  --color-arcade-footer: #eef1f8;
+  --color-arcade-footer-heading: #0b0f1d;
+  --color-arcade-footer-text: #475569;
+  --color-arcade-footer-divider: rgba(15, 23, 42, 0.1);
+
+  --color-arcade-level: #c7d2fe;
+
+  --color-arcade-cyan: #0c6980;
+  --color-arcade-secondary: #0b6377;
+  --color-arcade-neon: #3f6212;
+  --color-arcade-purple-glow: #6d28d9;
+  --color-arcade-primary: #e11d48;
+  --color-arcade-role-pm: #2563eb;
+  --color-arcade-role-ux: #7c3aed;
+  --color-arcade-role-dev: #0e7490;
+  --color-arcade-role-qa: #c2410c;
+
+  --color-arcade-cyan-badge: rgba(8, 145, 178, 0.1);
+  --color-arcade-cyan-badge-border: rgba(8, 145, 178, 0.25);
+  --color-arcade-cyan-icon: rgba(8, 145, 178, 0.08);
+  --color-arcade-cyan-icon-border: rgba(8, 145, 178, 0.2);
+  --color-arcade-purple-badge: rgba(109, 40, 217, 0.12);
+}
+
+:root[data-theme='light'] [data-theme='dark'] {
+  --color-arcade-background: #05050d;
+  --color-arcade-900: #10101c;
+  --color-arcade-800: #1a1a2c;
+  --color-arcade-700: #262640;
+
+  --color-arcade-white: #ffffff;
+  --color-arcade-on-accent: #0b0f1d;
+  --color-arcade-ghost: #ececf6;
+  --color-arcade-muted: #7d7da1;
+  --color-arcade-text-secondary: #a3a3c2;
+
+  --color-arcade-hud: rgba(10, 22, 40, 0.6);
+  --color-arcade-panel: rgba(9, 13, 22, 0.18);
+  --color-arcade-stats-bar: rgba(9, 13, 22, 0.15);
+
+  --color-arcade-footer-heading: #f8fafc;
+  --color-arcade-footer-text: #cbd5e1;
+
+  --color-arcade-level: #0d1a3e;
+
+  --color-arcade-cyan: #00f0ff;
+  --color-arcade-secondary: #22d3ee;
+  --color-arcade-cyan-badge: rgba(0, 240, 255, 0.1);
+  --color-arcade-cyan-badge-border: rgba(0, 240, 255, 0.18);
+  --color-arcade-cyan-icon: rgba(0, 240, 255, 0.08);
+  --color-arcade-cyan-icon-border: rgba(0, 240, 255, 0.15);
+}
+
 @layer base {
   html {
     @apply bg-arcade-background;
