@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DevLevelUp">
+  <title>DevLevelUp</title>
+  <rect width="64" height="64" rx="12" fill="#05050d" />
+  <rect
+    x="1.5"
+    y="1.5"
+    width="61"
+    height="61"
+    rx="10.5"
+    fill="none"
+    stroke="#00f0ff"
+    stroke-opacity="0.35"
+    stroke-width="2"
+  />
+  <!-- coração pixel-art (power-up) -->
+  <g fill="#f43f5e">
+    <rect x="20" y="20" width="4" height="4" />
+    <rect x="24" y="20" width="4" height="4" />
+    <rect x="16" y="24" width="4" height="4" />
+    <rect x="20" y="24" width="4" height="4" />
+    <rect x="24" y="24" width="4" height="4" />
+    <rect x="28" y="24" width="4" height="4" />
+    <rect x="36" y="24" width="4" height="4" />
+    <rect x="40" y="24" width="4" height="4" />
+    <rect x="44" y="24" width="4" height="4" />
+    <rect x="48" y="24" width="4" height="4" />
+    <rect x="16" y="28" width="4" height="4" />
+    <rect x="20" y="28" width="4" height="4" />
+    <rect x="24" y="28" width="4" height="4" />
+    <rect x="28" y="28" width="4" height="4" />
+    <rect x="32" y="28" width="4" height="4" />
+    <rect x="36" y="28" width="4" height="4" />
+    <rect x="40" y="28" width="4" height="4" />
+    <rect x="44" y="28" width="4" height="4" />
+    <rect x="20" y="32" width="4" height="4" />
+    <rect x="24" y="32" width="4" height="4" />
+    <rect x="28" y="32" width="4" height="4" />
+    <rect x="32" y="32" width="4" height="4" />
+    <rect x="36" y="32" width="4" height="4" />
+    <rect x="40" y="32" width="4" height="4" />
+    <rect x="24" y="36" width="4" height="4" />
+    <rect x="28" y="36" width="4" height="4" />
+    <rect x="32" y="36" width="4" height="4" />
+    <rect x="36" y="36" width="4" height="4" />
+    <rect x="28" y="40" width="4" height="4" />
+    <rect x="32" y="40" width="4" height="4" />
+  </g>
+  <!-- brilho -->
+  <rect x="20" y="20" width="4" height="4" fill="#fddf01" />
+  <rect x="24" y="20" width="4" height="4" fill="#fddf01" />
+  <!-- partículas (sparkles) -->
+  <rect x="52" y="12" width="4" height="4" fill="#00f0ff" />
+  <rect x="8" y="48" width="4" height="4" fill="#00f0ff" />
+  <rect x="12" y="52" width="4" height="4" fill="#00f0ff" />
+</svg>

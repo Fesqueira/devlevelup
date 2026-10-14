@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>404 — DevLevelUp</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      /*
+       * Página estática de fallback (fora do build) — cores espelhadas dos
+       * tokens do @theme em src/index.css.
+       */
+      :root {
+        --bg: #05050d;
+        --panel: #10101c;
+        --border: #1e3a5f;
+        --cyan: #00f0ff;
+        --rose: #f43f5e;
+        --yellow: #fddf01;
+        --white: #ffffff;
+        --muted: #7d7da1;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        background: var(--bg);
+        color: var(--white);
+        font-family: 'Courier New', monospace;
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background: repeating-linear-gradient(
+          to bottom,
+          transparent 0 2px,
+          rgba(0, 240, 255, 0.04) 2px 4px
+        );
+      }
+
+      .screen {
+        position: relative;
+        width: 100%;
+        max-width: 32rem;
+        border: 2px solid var(--border);
+        background: var(--panel);
+        box-shadow: 0 0 24px rgba(0, 240, 255, 0.15);
+        padding: 2.5rem 1.5rem;
+      }
+
+      .status {
+        display: inline-block;
+        border: 2px solid var(--cyan);
+        color: var(--cyan);
+        padding: 0.25rem 0.75rem;
+        letter-spacing: 0.2em;
+        font-size: 0.8125rem;
+        text-shadow: 0 0 18px rgba(0, 240, 255, 0.4);
+      }
+
+      h1 {
+        margin: 1.5rem 0 0.5rem;
+        font-size: 1.25rem;
+        letter-spacing: 0.12em;
+        color: var(--rose);
+        text-shadow: 0 0 18px rgba(0, 240, 255, 0.4);
+      }
+
+      p {
+        margin: 0 auto 2rem;
+        max-width: 24rem;
+        color: var(--muted);
+        font-size: 0.875rem;
+        line-height: 1.6;
+      }
+
+      a {
+        display: inline-block;
+        background: var(--yellow);
+        color: #0a0e2a;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        padding: 0.75rem 1.5rem;
+        box-shadow: 0 4px 16px rgba(253, 223, 1, 0.4);
+      }
+
+      a:hover,
+      a:focus-visible {
+        outline: 2px solid var(--cyan);
+        outline-offset: 2px;
+        background: var(--yellow);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="screen">
+      <span class="status">NÍVEL 404</span>
+      <h1>GAME OVER</h1>
+      <p>
+        O nível que você procura não existe nesta fase.<br />Volte para o início
+        do jogo.
+      </p>
+      <a href="/">← Voltar ao início</a>
+    </main>
+  </body>
+</html>

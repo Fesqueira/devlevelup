@@ -1,0 +1,35 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+  push:
+    branches: [main, develop, 'release/**', 'hotfix/**']
+
+concurrency:
+  group: lighthouse-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Rodar Lighthouse CI (não-bloqueante)
+        run: npx --yes @lhci/cli@0.14.0 autorun
+
+      - name: Enviar relatório como artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: ./lhci-artifacts
+          if-no-files-found: warn

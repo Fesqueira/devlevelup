@@ -5,24 +5,28 @@ Campanha de apoio ao projeto via [Apoia.se](https://apoia.se/soujunior).
 
 ## Stack
 
-- **React** 19.3.0
-- **React DOM** 19.3.0
-- **Vite** 8.3.0
-- **TypeScript** 6.0.3
-- **Tailwind CSS** 4.3.3 (`@tailwindcss/vite` 4.3.3)
-- **Framer Motion** 13.2.0
-- **Lucide React** 1.45.0
-- **clsx** 2.1.1
-- **tailwind-merge** 3.7.0
-- **@fontsource/\*** 5.3.0 (Plus Jakarta Sans, Press Start 2P, Roboto Flex, Sora)
+- **React** + **React DOM**
+- **Vite**
+- **TypeScript**
+- **Tailwind CSS** 4 (`@tailwindcss/vite`)
+- **Framer Motion**
+- **Lucide React**
+- **clsx** + **tailwind-merge**
+- **@fontsource/\*** (Plus Jakarta Sans, Press Start 2P, Roboto Flex, Sora)
 
 ### Ferramentas de desenvolvimento
 
-- **ESLint** 10.10.0
-- **Prettier** 3.9.6
-- **Husky** 9.1.7
-- **lint-staged** 17.5.1
-- **typescript-eslint** 8.70.0
+- **ESLint**
+- **Prettier**
+- **Husky**
+- **lint-staged**
+- **typescript-eslint**
+
+> Versões exatas: consultar o `package.json` (evita drift deste README).
+
+## Deploy
+
+Produção: [https://devlevelup-puce.vercel.app/](https://devlevelup-puce.vercel.app/) — deploy automático da Vercel a partir de `main`.
 
 ## Squad
 

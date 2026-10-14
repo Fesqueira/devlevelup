@@ -13,27 +13,37 @@ Spot: **Vite + React 19 + TypeScript + Tailwind CSS v4** (só client-side, sem S
 
 ```
 src/
-├── App.tsx          # composição das seções
-├── main.tsx         # bootstrap React
+├── App.tsx          # roteador mínimo: "/" → LandingPage (lazy); demais → NotFound
+├── main.tsx         # bootstrap React + ErrorBoundary
 ├── index.css        # tokens do Tailwind (@theme) + base
 ├── config.ts        # metadata do projeto (siteConfig)
+├── pages/           # telas inteiras (LandingPage, NotFound, ServerError)
 ├── sections/        # seções da LP (Hero, CTA, Footer)
 ├── components/
-│   ├── ui/          # primitivos reutilizáveis (Button, Card)
+│   ├── ui/          # primitivos reutilizáveis (Button, Card, ScreenShell)
+│   ├── error/       # subcomponentes das telas de erro (ErrorScreen)
 │   └── footer/      # subcomponentes do Footer (FooterBrand, FooterSocial)
-├── hooks/           # hooks customizados (useXxx.ts)
+├── hooks/           # hooks customizados (usePathname.ts, useDocumentTitle.ts)
 ├── lib/             # utils (cn(), etc.)
 └── data/            # dados estáticos das seções
 ```
 
 ### Como os arquivos se comunicam
 
-- `main.tsx` → importa `App.tsx` (e `index.css`).
-- `App.tsx` → compõe as seções de `sections/` na ordem da página.
+- `main.tsx` → importa `App.tsx` (e `index.css`), envolvendo o app em `<ErrorBoundary />`.
+- `App.tsx` → lê a rota atual com `usePathname()` e renderiza `LandingPage` (lazy) para `/` ou `NotFound` para qualquer outra rota; `<Suspense fallback={<LoadingScreen />}>` cobre o carregamento do chunk.
+- `pages/` → telas inteiras; `components/error/` tem o layout `ErrorScreen`; `components/ui/ErrorBoundary` captura erro de render e mostra `ServerError`.
 - `sections/` → usam `components/ui/*`, `components/<feature>/*` e dados de `data/`.
 - `components/ui/*` → primitivos genéricos; usam `cn()` de `lib/utils.ts` para mesclar classes.
-- `components/<feature>/*` → subcomponentes específicos de uma seção (ex.: `components/footer/`); usam `cn()` e tokens do `@theme`.
+- `components/<feature>/*` → subcomponentes específicos de uma seção/tela (ex.: `components/error/`); usam `cn()` e tokens do `@theme`.
 - Cores/fontes vêm **só** dos tokens de `index.css` (`@theme`), nunca hardcoded.
+
+### Rotas e telas de erro
+
+- `/` (ou vazio) → LP; qualquer outra rota → **404** (`NotFound`).
+- Erro de render (React) → **500** (`ServerError` via `ErrorBoundary`).
+- **Loading**: splash em HTML/CSS inline em `index.html` cobre o primeiro paint; `LoadingScreen` (React) é o fallback de `Suspense` e o visual idêntico torna a troca fluida.
+- **Vercel**: `rewrites` catch-all → `/index.html` garante o fallback SPA (soft 404, HTTP 200). Telas de loading/erro são sempre dark (`data-theme="dark"` em `ScreenShell`).
 
 ## Convenções
 

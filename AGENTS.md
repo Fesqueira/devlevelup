@@ -51,7 +51,9 @@ Mensagens em português, descritivas. Um commit = uma mudança coesa.
 - Hooks: `useXxx.ts` (ex.: `useMediaQuery.ts`)
 - Utils/lib: `kebab-case.ts` (ex.: `lib/utils.ts`)
 - Seções do layout: `src/sections/`
+- Páginas / telas inteiras (404, 500): `src/pages/`
 - Componentes reutilizáveis/primitivos: `src/components/ui/`
+- Subcomponentes de tela/seção: `src/components/<feature>/` (ex.: `src/components/error/`)
 - Dados estáticos: `src/data/`
 - Metadata do projeto: `src/config.ts` (`siteConfig`)
 
